@@ -10,13 +10,15 @@
             </div>
             <div class="description-container">
                 {{portfolioItem.description}}
-            </div>
-            <div class="logo-container">
-                <div v-for="logo in portfolioItem.logos" :key="logo">
-                    <img :src="require(`../assets/framework-icons/${logo}`)"/>
 
+                <div class="logo-container">
+                    <div v-for="logo in portfolioItem.logos" :key="logo">
+                        <img :src="require(`../assets/framework-icons/${logo}`)"/>
+
+                    </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </template>
@@ -30,6 +32,12 @@ export default {
 </script>
 
 <style scoped>
+    @keyframes opacityAnim {
+
+        0% {opacity:0;}
+        100% {opacity:1;}
+
+    }
     .modal-mask {
     position: fixed;
     z-index: 9998;
@@ -39,12 +47,12 @@ export default {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: table;
-    transition: opacity 0.3s ease;
+    animation: opacityAnim 0.3s linear;
     }
     
     .modal-container {
         height:80%;
-        width:80%;
+        width:90%;
         background:black;
         border:3px solid rgb(4, 255, 150);
 
@@ -52,12 +60,13 @@ export default {
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
+        overflow-y:scroll;
         
     }
 
     .video-container {
     width:900px;
-    height:500px;
+    height:540px;
     overflow:hidden;
     
   }
@@ -65,6 +74,7 @@ export default {
   @media only screen and (min-width: 1800px) {
         .video-container {
             float:left;
+            padding-left:3%;
         }
     }
 
@@ -83,18 +93,24 @@ export default {
 
   .description-container {
       min-height: 400px;
+      width:600px;
+      padding-left:5%;
+      float:left;
   }
 
 
   .logo-container {
       height:150px;
-      width:auto;
+      width:600px;
       margin:auto;
+      padding-top:5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
   }
 
     img {
         height:auto;
         width:100px;
-        float:left;
     }
 </style>

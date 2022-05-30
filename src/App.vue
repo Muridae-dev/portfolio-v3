@@ -4,16 +4,11 @@
     <HeaderNav :componentArray="windowedComponents"/>-->
     <div v-for="thumbnail in windowedComponents"
       :key="thumbnail.name" class="thumbnail" 
-      @click="thumbnail.useWindow ? (thumbnail.isActive = !thumbnail.isActive, currentZ++, thumbnail.zIndex = currentZ) : noNewWindow(thumbnail)"
+      @click="thumbnail.name != 'Portfolio' ? (thumbnail.isActive = !thumbnail.isActive, currentZ++, thumbnail.zIndex = currentZ) : goto('Portfolio')"
       :style="{'left' : thumbnail.xPos ,'top' : thumbnail.yPos}"
-      
     >
-    <div class="thumbnail-container">
-    <div class="thumbnail-background"> </div>
-    </div>
-      <img :src="require(`${thumbnail.thumbnail}`)" style="height:100px;width:auto;" 
-      /><br />
-      <span>{{thumbnail.name}}</span>
+      <img :src="require(`${thumbnail.thumbnail}`)" style="height:100px;width:auto;" /><br />
+      {{thumbnail.name}}
     </div>
 
     <!-- LOOPING THROUGH THE COMPONENT ARRAY, SHOWING A NEW WINDOW WHEN THAT COMPONENTS "isActive" IS TRUE -->
@@ -25,12 +20,9 @@
         <component :is="windowedComponent.component">
         </component>
       </NewWindow>
-
     </div>
-
-    <Mascots v-if="mascotsActive"/>
     
-    <!--<Intro />-->
+    <Intro />
     
     <div style="position:absolute; top:100%;" ref="Portfolio">
       <Portfolio />
@@ -45,9 +37,6 @@ import Portfolio from "./views/Portfolio.vue"
 import HomeView from "./views/HomeView.vue"
 import Travel from "./views/Travel.vue"
 import Intro from "./views/Intro.vue"
-import AboutMe from "./views/AboutMe.vue"
-import Drawing from "./views/Drawing.vue"
-import Mascots from "./components/Mascots.vue"
 
   export default {
     name: "App",
@@ -57,39 +46,35 @@ import Mascots from "./components/Mascots.vue"
       Portfolio,
       HomeView,
       Travel,
-      Intro,
-      AboutMe,
-      Drawing,
-      Mascots
+      Intro
 
     },
     data() {
       return {
         // COMPONENTS FOR "NewWindow.vue"
         currentZ: 0,
-        mascotsActive: false,
         windowedComponents : [
           {
             component: "Portfolio",
             isActive: false,
-            name: "Work",
+            name: "Portfolio",
+            defaultSizeX: 'calc(100% - 6px)',
+            defaultSizeY: 'calc(100% - 6px)',
             thumbnail: "./assets/icons/portfolio.png",
             zIndex: 0,
             xPos: '10%',
             yPos: '10%',
-            useWindow: false,
           },
           {
             component: "HomeView",
             isActive: false,
             name: "Home",
-            defaultSizeX: '800px',
+            defaultSizeX: '1000px',
             defaultSizeY: '800px',
             thumbnail: "./assets/intro/muridae.png",
             zIndex: 0,
-            xPos: '75%',
-            yPos: '30%',
-            useWindow: true
+            xPos: '70%',
+            yPos: '20%',
           },
           {
             component: "Travel",
@@ -99,53 +84,13 @@ import Mascots from "./components/Mascots.vue"
             defaultSizeY: '800px',
             thumbnail: "./assets/mascots/murky.png",
             zIndex: 0,
-            xPos: '10%',
-            yPos: '70%',
-            useWindow: true
-          },
-          {
-            component: "AboutMe",
-            isActive: false,
-            name: "About Me",
-            defaultSizeX: '800px',
-            defaultSizeY: '800px',
-            thumbnail: "./assets/icons/portfolio.png",
-            zIndex: 0,
-            xPos: '70%',
-            yPos: '70%',
-            useWindow: true
-          },
-          {
-           component: "Drawing",
-            isActive: false,
-            name: "Draw Here!",
-            defaultSizeX: '800px',
-            defaultSizeY: '800px',
-            thumbnail: "./assets/mascots/hogger.png",
-            zIndex: 0,
-            xPos: '15%',
-            yPos: '40%',
-            useWindow: true
-          },
-          {
-            component: "Mascots",
-            isActive: false,
-            name: "Mascots",
-            thumbnail: "./assets/mascots/occult2.png",
-            zIndex: 0,
-            xPos: "70%",
-            yPos: "10%",
-            useWindow: false
-            
+            xPos: '30%',
+            yPos: '80%',
           }
         ]
       }
     },
     methods: {
-      noNewWindow(thumbnail) {
-        if(thumbnail.name == "Work") {this.goto("Portfolio")}
-        if(thumbnail.name == "Mascots") {this.mascotsActive = !this.mascotsActive}
-      },
       goto(refName) {
             var element = this.$refs[refName];
             var top = element.offsetTop;
@@ -155,14 +100,6 @@ import Mascots from "./components/Mascots.vue"
               left: 0,
               behavior: 'smooth'
             });
-      },
-      hoverThumbnail(e) {
-        //ERROR HANDLING
-        if(e.target.children[0]) e.target.children[0].classList.add("thumbActive");
-      },
-      leaveThumbnail(e) {
-        //ERROR HANDLING
-        if(e.target.children[0]) e.target.children[0].classList.remove("thumbActive")
       }
     }
   }
@@ -172,18 +109,11 @@ import Mascots from "./components/Mascots.vue"
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&display=swap');
 
-/* ------------------- GENERAL ----------------*/
-
 body {
   background:black;
   color:white;
   overflow-x:hidden;
   
-}
-
-* {
-  font-family: 'Koulen', cursive;
-  color:white;
 }
 
 body::-webkit-scrollbar-track
@@ -204,75 +134,18 @@ body::-webkit-scrollbar-thumb
     border: 2px solid rgb(4, 255, 150);
 }
 
-/* ------------------- GENERAL END ----------------*/
-
-
-
-/* ------------------- THUMBNAIL ----------------*/
-
-@keyframes thumbnailAnim {
-    0% {opacity:0; transform:scale(2)}
-
-    100% {opacity:1; transform:scale(1)}
-}
-
-.thumbnail-background {
-  position:absolute;
-  top:50%;
-  left:50%;
-
-  width:0px;
-  height:0px;
-  border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:rgb(4, 255, 150);
-  transition:width 0.5s, height 0.5s;
-
-  z-index: -1;
-}
-
-.thumbnail-container {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-}
-
 .thumbnail {
   height:auto;
   width:auto;
   float:left;
   position:absolute;
   text-align:center;
-  min-width: 100px;
-  cursor:pointer;
-
-  animation: thumbnailAnim 1.5s ease;
-
-  transition:transform  0.5s;
 }
 
-.thumbnail:hover {
-  transform:scale(1.5);
+* {
+  font-family: 'Koulen', cursive;
+  color:white;
 }
-
-span {
-  mix-blend-mode:difference;
-  font-size: 1.5em;
-  z-index: -1;
-}
-
-
-.thumbActive {
-  width:150px;
-  height:150px;
-}
-
-
-
-/* ------------------- THUMBNAIL END ----------------*/
-
 
 .center-align-text {
   position:relative;

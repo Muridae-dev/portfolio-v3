@@ -13,7 +13,7 @@
 
                 <div class="logo-container">
                     <div v-for="logo in portfolioItem.logos" :key="logo">
-                        <img :src="require(`../assets/framework-icons/${logo}`)"/>
+                        <!--<img :src="require(`../assets/framework-icons/${logo}`)"/>-->
 
                     </div>
                 </div>

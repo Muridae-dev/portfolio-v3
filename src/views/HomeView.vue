@@ -12,11 +12,17 @@ export default {
   name: 'HomeView',
   components: {
     
+  },
+  methods: {
+    
   }
 }
 </script>
 
 <style scoped>
+div {
+  background:blue;
+}
 .home {
   position:absolute;
   top:50%;

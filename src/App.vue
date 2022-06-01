@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-main" ref="Home">
     <!-- SENDING THE COMPONENT ARRAY TO THE HEADER IN ABLE TO ACTIVATE EACH WINDOW 
     <HeaderNav :componentArray="windowedComponents"/>-->
     <div v-for="thumbnail in windowedComponents"
@@ -21,15 +21,22 @@
         </component>
       </NewWindow>
     </div>
+  </div>
 
+  
     <Mascots v-if="mascotsActive"/>
     
     <Intro />
         
-    <div style="position:absolute; top:100%;" ref="Portfolio">
+    <div ref="Work" class="container-portfolio">
       <Portfolio />
     </div>
-  </div>
+
+    <div ref="About Me" class="container-about">
+      <AboutMe />
+    </div>
+
+  
 </template>
 
 <script>
@@ -81,9 +88,9 @@ import Mascots from "./components/Mascots.vue"
             defaultSizeY: '800px',
             thumbnail: "./assets/intro/muridae.png",
             zIndex: 0,
-            xPos: '75%',
-            yPos: '30%',
-            useWindow: true
+            xPos: 'calc(200% - 300px)',
+            yPos: '70%',
+            useWindow: false
           },
           {
             component: "Travel",
@@ -107,7 +114,7 @@ import Mascots from "./components/Mascots.vue"
             zIndex: 0,
             xPos: '70%',
             yPos: '70%',
-            useWindow: true
+            useWindow: false
           },
           {
            component: "Drawing",
@@ -137,16 +144,23 @@ import Mascots from "./components/Mascots.vue"
     },
     methods: {
       noNewWindow(thumbnail) {
-        if(thumbnail.name == "Work") {this.goto("Portfolio")}
         if(thumbnail.name == "Mascots") {this.mascotsActive = !this.mascotsActive}
+        else {this.goto(thumbnail.name)}
+      
+
+        console.log(thumbnail.name)
       },
       goto(refName) {
-            var element = this.$refs[refName];
+            console.log(refName.toString())
+            var element = this.$refs[refName.toString()];
+            console.log(element)
             var top = element.offsetTop;
+            var left = element.offsetLeft;
+            
 
             window.scrollTo({
               top: top,
-              left: 0,
+              left: left,
               behavior: 'smooth'
             });
       },
@@ -167,6 +181,13 @@ import Mascots from "./components/Mascots.vue"
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&display=swap');
 
 /* ------------------- GENERAL ----------------*/
+
+html, body {
+  height:100%;
+  padding:0;
+  margin:0;
+
+}
 
 body {
   background:black;
@@ -267,6 +288,31 @@ span {
 
 /* ------------------- THUMBNAIL END ----------------*/
 
+.container-main {
+  height: 100vh;
+  width:100vw;
+
+}
+
+.container-portfolio {
+  height:auto;
+  width:100vw;
+  position:absolute;
+  top:100%;
+}
+
+.container-about {
+  height:100vh;
+  width:100vw;
+
+  position:absolute;
+  top:0;
+  left:100vw;
+
+  z-index: -1;
+
+
+}
 
 .center-align-text {
   position:relative;

@@ -13,21 +13,24 @@
         :line-join="lineJoin"
 
         />
-        <button @click.prevent="$refs.VueDrawingCanvas.undo()">
-        UNDO
-        </button>
-        <input type="color" v-model="backgroundColor"/>
-        <input type="color" v-model="penColor" />
-        <select v-model="lineJoin">
-            <option value="round">lineJoin Round</option>
-            <option value="miter">lineJoin Miter</option>
-            <option value="bevel">lineJoin Bevel</option>
-        </select>
-        <select v-model="line">
-            <option v-for="n in 25" :key="'option-' + n" :value="n">
-              {{ n }}
-            </option>
-        </select>
+
+        <div class="button-container">
+            <button @click.prevent="$refs.VueDrawingCanvas.undo()">
+            UNDO
+            </button>
+            <input type="color" v-model="backgroundColor"/>
+            <input type="color" v-model="penColor" />
+            <select v-model="lineJoin">
+                <option value="round">lineJoin Round</option>
+                <option value="miter">lineJoin Miter</option>
+                <option value="bevel">lineJoin Bevel</option>
+            </select>
+            <select v-model="line" id="style-4">
+                <option v-for="n in 25" :key="'option-' + n" :value="n">
+                {{ n }}
+                </option>
+            </select>
+        </div>
 
         
 </template>
@@ -60,14 +63,13 @@
 </script>
 
 <style scoped>
-    .container {
-        height:100%;
-        width:100%;
 
+    .button-container {
         position:absolute;
-        top:0;
-        left:0;
-    }
+        top: calc(50% + 350px);
+        left:50%;
+        transform:translate(-50%,-50%);
+    }   
 
     button {
         background:rgb(4, 255, 150);
@@ -79,6 +81,38 @@
         background:rgb(4, 255, 150);
         border:none;
         color:black;
+    }
+
+    select {
+        background:rgb(4, 255, 150);
+        border:none;
+        color:black;
+    }
+
+    option {
+        color:black;
+    }
+
+
+    
+    #style-4::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: black;
+        
+    }
+
+    #style-4::-webkit-scrollbar
+    {
+        width: 10px;
+        background-color: blue;
+    }
+
+    #style-4::-webkit-scrollbar-thumb
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: rgb(4, 255, 150);
+        border: 2px solid rgb(4, 255, 150);
     }
 
 

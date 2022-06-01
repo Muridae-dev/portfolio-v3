@@ -45,65 +45,80 @@ export default {
             {
               name: 'savemissx',
               isActive: false,
-              description: `This is a game I made back in 2019 using haxe & haxeflixel, its a 2d platformer with character features such as: double jumping,
-              climbing, running, 5 unique attacks & animations and a power up feature called "RAGE" which increases on dealing & taking damage and when activated
-              increases character movement-speed and attack-damage for a short window of time. <br />
-              It also features 2 kinds of enemies, one flying, one grounded, 7 different stages with three different backgrounds. <br/>
-              It's built using classes, states and a map editor called "Ogmo editor". <br/>
-              All sprites and textures are handrawn by me using Aseprite.`,
+              description: [`This is a game I made back in 2019 using haxe & haxeflixel, its a 2d platformer with character features such as: double jumping,
+              climbing, running, 5 unique attacks & animations and a power up feature called "RAGE", when activated
+              increases character movement-speed and attack-damage for a short window of time.`,
+              `It also features 2 kinds of enemies, one flying, one grounded, 7 different stages with three different backgrounds.`,
+              `It's built using classes, states, a map editor called "Ogmo editor" and all sprites and textures are handrawn by me using Aseprite.`],
               logos: ["haxe.png", "haxeflixel.png", "aseprite.png", "ogmo.png"],
             },
             {
               name: 'dodgethevirus',
               isActive: false,
-              description: `This is DODGE THE VIRUS! It's a game where you travel between different funky websites in order to reach the final boss, THE DRAGON.
-              The journey is full of dangerous VIRUSES that you need to avoid. Being a victim of a virus breaks the game and a restart is needed to continue. <br />
-              This was my first project at Hyper Island. As such I wanted to explore as many features, in HTML, CSS & Javascript, as I could and figured the best way was to
+              description: [`This is DODGE THE VIRUS! It's a game where you travel between different funky websites in order to reach the final boss, THE DRAGON.
+              The journey is full of dangerous VIRUSES that you need to avoid. Being a victim of a virus breaks the game and a restart is needed to continue.`,
+              `This was my first project at Hyper Island. As such I wanted to explore as many features, in HTML, CSS & Javascript, as I could and figured the best way was to
               create a whole bunch of different websites, then stringing them together in a sort of "game". The websites are loaded dynamically on the page using Javascript 
-              objects and most of the textures are hand-drawn by me using photoshop.`,
+              objects and most of the textures are hand-drawn by me using photoshop.`],
               logos: ["javascript.svg", "html.png", "css.png", "jquery.png", "photoshop.svg"]
             },
             {
               name: 'marketplace',
               isActive: false,
-              description: `This was my first introduction to the MERN stack. It's a marketplace demo that features: user registration & login saved to Mongodb with bcrypted passwords,
-              user authentication using JSON-webtokens, posting items with images that are saved to the server using Multer. Item creation also features a short description, choosing
-              tags and choosing the color of the description text. In the marketplace you can view other users items, filter items using tags and REQUEST TRADEs. When a trade request 
+              description: [`This was my first introduction to the MERN stack. It's a marketplace demo that features:`,
+              `- User registration & login saved to Mongodb with bcrypted passwords`,
+              `- User authentication using JSON-webtokens`,
+              `- Posting items with images that are saved to the local server using Multer.`,
+              `Item creation also features a short description, choosing tags and choosing the color of the description text.`,
+              `In the marketplace you can view other users items, filter items using tags and REQUEST TRADEs. When a trade request 
               is made the owner of the item will be notified in the "Inventory" route and can then choose to ACCEPT TRADE, where the requesting user will then aquire said item in 
-              their inventory.`,
+              their inventory.`],
               logos: ["mongodb.png", "express.svg", "react.png", "nodejs.png"]
             },
             {
               name: 'blackjack',
               isActive: false,
-              description: `It's my first react project and it's Blackjack based on a deck of cards API https://deckofcardsapi.com/ !! It has all the necessary blackjack features
+              description: [`My first react project and it's Blackjack based on a deck of cards API https://deckofcardsapi.com/!!`,
+              `It has all the necessary blackjack features
               such as: betting, asking for more cards (hitting), losing (busting) with a value over 21, dealer showing only one card until users round is finished, 
-              dealer drawing automatically until a value over 16, Aces automatically going between 11 and 1 and dynamically lining up the cards in a viewable manner.`,
+              dealer drawing automatically until a value over 16, Aces automatically going between 11 and 1 and dynamically lining up the cards in a viewable manner.`],
               logos: ["react.png", "javascript.svg"]
             },
             {
               name: 'thehills',
               isActive: false,
-              description: `Welcome to the hills! It's an app where you would be able to buy and own your own viritual apartment. For now it's only a prototype,
-              in where you can edit one apartment (601) with different posters of your choosing. Other apartments that light up are owned by the
-              creators in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database. <br/>
-              This was a group project in where the focus was on collaboration. We worked with an agile/scrum setup with weekly sprints and I mostly worked with backend-features`,
+              description: [`Welcome to the Hills! It's an app where you would be able to buy and own your own viritual apartment. For now it's only a demo,
+              in where you can edit one apartment (601) with different posters of your choosing. Other apartments that light up are owned by us, the
+              creators, in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database.`,
+              `This was a group project in where the focus was on collaboration. We worked with an agile/scrum setup with weekly sprints, in where my focus was mainly backend
+              and functionality`],
               logos: ["mongodb.png", "express.svg", "react.png", "nodejs.png"]
             },
             {
               name: 'quiz',
               isActive: false,
-              description: `A fun quiz made in javascript! It features `
+              description: [`A fun quiz made in javascript! It features 6 different types of quizzes, a ghibli-sound quiz, a silhouette quiz, a quiz with dragging/dropping
+              pictures, a flashlight quiz, a "dressing room" quiz and a more typical question with X options quiz.`,
+              `This was my second group project at Hyper-Island, where our group chose to focus on learning. As such we divided the quizzes for each individual to work on,
+              while being available for the group for questions/help throwing ideas around. I worked mainly on the dragging/dropping quiz, flashlight quiz and the visual effects
+              inbetween the quizzes.`],
+              logos: ["javascript.svg", "html.png", "css.png", "jquery.png"]
             },
             {
               name: 'homepage',
               isActive: false,
-              description: ''
+              description: [`This was my first group project at Hyper-Island and our goal was to work with local/session-storage. We decided to make a more fun "new-tab" like website
+              where you can add your own favourite websites as links to the page, while having a background that changes depending on the time of day (daytime = sun, nighttime = moon & stars)`],
+              logos: ["javascript.svg", "html.png", "css.png"]
             },
             {
               name: 'tombraiders',
               isActive: false,
-              description: ''
+              description: [`The game is called Tomb-Raiders! It's a 2d platformer made in phaser and a tilemap editor called "tiled", it has features such as double-jumping,
+              attacking, enemies following you on sight, keys to unlock doors and 4 different levels. All of the sprites and textures are free assets we found online, while the
+              spritesheets themselves are handmade by us.`,
+              `This was my third group project at Hyper-Island where the focus was making games inside phaser.`],
+              logos: ["javascript.svg", "phaser.png"]
             },
           ]
 

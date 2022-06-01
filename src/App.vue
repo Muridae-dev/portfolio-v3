@@ -24,8 +24,8 @@
 
     <Mascots v-if="mascotsActive"/>
     
-    <!--<Intro />-->
-    
+    <Intro />
+        
     <div style="position:absolute; top:100%;" ref="Portfolio">
       <Portfolio />
     </div>

@@ -5,11 +5,14 @@
         :style="[isFullscreen ? {'top' : '50%', 'left' : '50%'} : {'width': windowedComponent.defaultSizeX,'height' : windowedComponent.defaultSizeY}, {'z-index' : windowedComponent.zIndex}]"
     >
         <div class="top-bar" @mousedown="!isFullscreen && dragMouseDown($event)">
+            <div class="title-text">
+                {{windowedComponent.name}}
+            </div>
             <div class="fullscreen-button" @click="isFullscreen = !isFullscreen">
-                FULLSCREEN
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Resize</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M304 96h112v112M405.77 106.2L111.98 400.02M208 416H96V304"/></svg>
             </div>
             <div class="close-x" @click="windowedComponent.isActive = !windowedComponent.isActive">
-                X
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
             </div>
         </div>
         <slot>
@@ -71,6 +74,8 @@ export default {
         width:30vw;
         background:black;
         border:3px solid rgb(4, 255, 150);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         transition: width 1s, height 1s;
 
         overflow-y:auto;
@@ -79,8 +84,10 @@ export default {
 
     #style-4::-webkit-scrollbar-track
     {
+        border-radius:10px;
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
         background-color: black;
+        
     }
 
     #style-4::-webkit-scrollbar
@@ -95,6 +102,15 @@ export default {
         border: 2px solid rgb(4, 255, 150);
     }
 
+    .title-text {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        
+        cursor:default;
+    }
+
 
     .fullscreen {
         height:calc(100% - 6px);
@@ -103,7 +119,17 @@ export default {
     }
 
     .fullscreen-button {
-        float:left;
+        position: absolute;
+        top:50%;
+        left:calc(100% - 60px);
+        transform: translate(0,-50%);
+
+        background:rgb(255, 20, 118);
+        border-radius:50%;
+        height:25px;
+        width:25px;
+
+        cursor:pointer;
     }
 
     .top-bar {
@@ -113,19 +139,24 @@ export default {
 
         border-bottom: 3px solid rgb(4, 255, 150);
         background:black;
-        height:20px;
+        height:40px;
         width:100%;
         z-index:999;
 
     }
 
     .close-x {
-        float:right;
+        position: absolute;
+        top:50%;
+        left:calc(100% - 30px);
+        transform: translate(0,-50%);
 
         background:red;
-        border-radius:70px;
-        height:100%;
-        width:30px;
+        border-radius:50%;
+        height:25px;
+        width:25px;
+
+        cursor:pointer;
     }
 
 

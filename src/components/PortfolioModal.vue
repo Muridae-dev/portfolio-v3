@@ -1,6 +1,6 @@
 <template>
     <div class="modal-mask" @click="closeFunc">
-        <div class="modal-container">
+        <div class="modal-container" id="style-4">
             <h1>{{portfolioItem.name}}</h1>
             <div class="video-container">
                 <video muted preload="metadata" style="z-index: 1;" autoplay="true">
@@ -9,11 +9,13 @@
                 
             </div>
             <div class="description-container">
-                {{portfolioItem.description}}
+                <p v-for="description in portfolioItem.description" :key="description">
+                    {{description}}
+                </p>
 
                 <div class="logo-container">
                     <div v-for="logo in portfolioItem.logos" :key="logo">
-                        <!--<img :src="require(`../assets/framework-icons/${logo}`)"/>-->
+                        <img :src="require(`../assets/framework-icons/${logo}`)"/>
 
                     </div>
                 </div>
@@ -32,6 +34,27 @@ export default {
 </script>
 
 <style scoped>
+
+    #style-4::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: black;
+    }
+
+    #style-4::-webkit-scrollbar
+    {
+        width: 10px;
+        background-color: blue;
+    }
+
+    #style-4::-webkit-scrollbar-thumb
+    {
+        background-color: rgb(4, 255, 150);
+        border: 2px solid rgb(4, 255, 150);
+    }
+
+
+
     @keyframes opacityAnim {
 
         0% {opacity:0;}
@@ -76,10 +99,18 @@ export default {
             float:left;
             padding-left:3%;
         }
+
+        .description-container {
+            float:left;
+        }
     }
 
     @media only screen and (max-width: 1799px) {
         .video-container {
+            margin:auto;
+        }
+
+        .description-container {
             margin:auto;
         }
     }
@@ -95,7 +126,7 @@ export default {
       min-height: 400px;
       width:600px;
       padding-left:5%;
-      float:left;
+      text-align: left;
   }
 
 

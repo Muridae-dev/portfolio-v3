@@ -50,6 +50,23 @@ import AboutMe from "./views/AboutMe.vue"
 import Drawing from "./views/Drawing.vue"
 import Mascots from "./components/Mascots.vue"
 
+// MOVE X SCROLL TO APPROPRIATE PLACE ON RESIZE
+$(window).resize(function () {
+  let halfWV = window.innerWidth / 2;
+  if(window.pageXOffset < halfWV) {
+    window.scrollTo({
+              left: 0,
+              behavior: 'smooth'
+    });
+  }
+  else {
+        window.scrollTo({
+              left: window.innerWidth,
+              behavior: 'smooth'
+    });
+  }
+})
+
   export default {
     name: "App",
     components: {
@@ -88,8 +105,8 @@ import Mascots from "./components/Mascots.vue"
             defaultSizeY: '800px',
             thumbnail: "./assets/intro/muridae.png",
             zIndex: 0,
-            xPos: 'calc(200% - 300px)',
-            yPos: '70%',
+            xPos: '100%',
+            yPos: '0%',
             useWindow: false
           },
           {
@@ -172,6 +189,22 @@ import Mascots from "./components/Mascots.vue"
         //ERROR HANDLING
         if(e.target.children[0]) e.target.children[0].classList.remove("thumbActive")
       }
+    },
+    mounted() {
+        // MAKING SURE X POSITION IS CORRECT ON LOAD
+        let halfWV = window.innerWidth / 2;
+        if(window.pageXOffset < halfWV) {
+          window.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+          });
+        }
+        else {
+              window.scrollTo({
+                    left: window.innerWidth,
+                    behavior: 'smooth'
+          });
+        }
     }
   }
 </script>
@@ -184,6 +217,7 @@ import Mascots from "./components/Mascots.vue"
 
 html, body {
   height:100%;
+  width:100%;
   padding:0;
   margin:0;
 
@@ -272,12 +306,6 @@ body::-webkit-scrollbar-thumb
   transform:scale(1.5);
 }
 
-span {
-  mix-blend-mode:difference;
-  font-size: 1.5em;
-  z-index: -1;
-}
-
 
 .thumbActive {
   width:150px;
@@ -332,5 +360,13 @@ span {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
+}
+</style>
+
+<style scoped>
+span {
+  mix-blend-mode:difference;
+  font-size: 1.5em;
+  z-index: -1;
 }
 </style>

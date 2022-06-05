@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
+    <div class="container" @mouseenter="hovered = true" @mouseleave="hovered = false">
         <div class="text-2">
-            <span v-for="(letter, index) in frontEndText" :key="index" class="front-end" :style="{'animation-delay' : `${index/20}s`}">
+            <span v-for="(letter, index) in frontEndText" :key="index"  :class="animationsTimer ? 'front-end-intro front-end' : hovered ? 'active front-end' : 'front-end'" :style="{'animation-delay' : `${index/20}s`}">
                 {{letter}}
             </span>
         </div>
         <div class="text-3">
-            <span class="gamer">
-                GAMER
-            </span>
-            <span class="traveler">
+            <span :class="animationsTimer ? 'traveler-intro traveler' : hovered ? 'traveler-hover traveler' : 'traveler'">
                 TRAVELER
             </span>
+            <span :class="animationsTimer ? 'gamer-intro' : hovered ? 'gamer-hover' : null" class="gamer">
+                GAMER
+            </span>
             <div class="musician-container">
-                <span v-for="(letter, index) in musicianText" :key="index" class="musician" :style="{'animation-delay' : `${3+(index/20)}s`}">
+                <span v-for="(letter, index) in musicianText" :key="index" :class="animationsTimer ? 'musician-intro' : hovered ? 'musician-hover' : null" class="musician" :style="animationsTimer ? {'animation-delay' : `${3+(index/20)}s`} : {'animation-delay' : `${(index/20)}s`}">
                     {{letter}}
                 </span>
             </div>
         </div>
 
         <div class="text-4">
-            <span class="boxer">
+            <span :class="animationsTimer ? 'boxer-intro' : hovered ? 'boxer-hover' : null" class="boxer">
                 BOXER
             </span>
-            <span class="artist">
+            <span :class="animationsTimer ? 'artist-intro' : hovered ? 'artist-hover' : null" class="artist">
                 ARTIST
             </span>
         </div>
@@ -35,10 +35,12 @@
 
         <!--<div class="img-container">
             <img :src="require('../assets/about/noah.jpg')"/>
-            <div class="arrow-down">
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Down</title><path fill="none" stroke="white" stroke-linecap="square" stroke-miterlimit="10" stroke-width="48" d="M112 268l144 144 144-144M256 392V100"/></svg>
-            </div>
+            
         </div>-->
+
+        <div class="arrow-down">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Arrow Down</title><path fill="none" stroke="white" stroke-linecap="square" stroke-miterlimit="10" stroke-width="48" d="M112 268l144 144 144-144M256 392V100"/></svg>
+        </div>
         
         
     </div>
@@ -52,16 +54,23 @@ export default {
     data() {
         return {
             frontEndText: ["F", "R", "O", "N", "T", " ", "E", "N", "D", " ", "D", "E", "V", "E", "L", "O", "P", "E", "R"],
-            musicianText: ["M", "U", "S", "I", "C", "I", "A", "N"]
+            musicianText: ["M", "U", "S", "I", "C", "I", "A", "N"],
+            hovered: false,
+            animationsTimer: true,
         }
     },
+
+    created() {
+        console.log(this.animationsTimer)
+        setTimeout(() => {this.animationsTimer = false; console.log("ran: " + this.animationsTimer)}, 7000)
+    }
 
 }
 </script>
 
 <style scoped>
 
-    /* ------------------- ANIMATION ----------------*/
+    /* ------------------- ANIMATION INTRO ----------------*/
 
     @keyframes textFlyIn {
         0% {top:500px;}
@@ -113,12 +122,67 @@ export default {
     }
 
 
-    /* ------------------- ANIMATION END ----------------*/
+    /* ------------------- ANIMATION INTRO END ----------------*/
+
+    /* ------------------- ANIMATION HOVER ----------------*/
+
+    @keyframes frontEndHover {
+        0% {top:0px}
+        50% {top:-3vw}
+        100% {top:0px}
+    }
+
+    @keyframes travelerHover {
+        0% {transform:scaleX(1)}
+        50% {transform:scaleX(0.5)}
+        100% {transform:scaleX(1)}
+    }
+
+    @keyframes gamerHover {
+        0% {color:aqua;}
+        50% {color:rgb(255, 0, 255)}
+        100% {color:rgb(0, 255, 0)}
+
+    }
+
+    @keyframes musicianHover {
+        0% {transform: rotateX(-360deg);}
+        100% {transform: rotateX(360deg);}
+    }
+
+    @keyframes boxerHover {
+        0% {transform: rotate(20deg);}
+        50% {transform: rotate(-20deg);}
+        100% {transform: rotate(20deg);}
+    }
+
+    @keyframes artistHover {
+        0% {transform: rotateY(0deg);}
+        100% {transform: rotateY(360deg);}
+    }
+
+    @keyframes andMuchMoreHover {
+        0% {transform:scale(1,1)}
+        50% {transform:scale(1.5,1.5)}
+        100% {transform:scale(1,1)}
+    }
+
+    .active {
+        position:relative;
+        animation: frontEndHover 1s ease-in-out;
+        animation-iteration-count:infinite;
+        animation-fill-mode: forwards; 
+
+    }
+
+
+
+    /* ------------------- ANIMATION HOVER END ----------------*/
 
 
     /* ------------------- INDIVIDUAL TEXT ----------------*/
     .gamer {
-        opacity:0;
+        opacity:1;
         font-family: 'Chakra Petch', sans-serif;
         /*font-family:gameText */
         font-size:5vw;
@@ -131,9 +195,19 @@ export default {
         top:0;
         transform: translate(-50%,0);
 
+
+    }
+
+    .gamer-intro {
+        opacity:0;
         animation: gamerAnim 1s linear 2.8s;
         animation-fill-mode: forwards;
 
+    }
+
+    .gamer-hover {
+        animation: gamerHover 1s ease-in-out;
+        animation-iteration-count: infinite;
     }
 
     .traveler {
@@ -141,7 +215,14 @@ export default {
         font-family: 'Caesar Dressing', cursive;
         color:blue;
         font-size:5vw;
+        position:absolute;
+        left:2vw;
+        transform: translate(0,0);
 
+        
+    }
+
+    .traveler-intro {
         position:absolute;
         left:300%;
         top:0;
@@ -149,7 +230,12 @@ export default {
 
         animation: travelerAnim 1.5s ease-in-out 1.5s;
         animation-fill-mode: forwards;
+    }
+
+    .traveler-hover {
         
+        animation: travelerHover 1s ease-in-out;
+        animation-iteration-count: infinite;
     }
 
     .musician-container {
@@ -163,27 +249,52 @@ export default {
         -webkit-text-stroke: 2px rgb(255, 0, 234);
         color:black;
         font-family: 'Rye', cursive;
+        font-size:4vw;
 
+        position:relative;
+        top:0px;
+        transform: rotateX(0deg);
+        display:inline-block;
+    }
+
+    .musician-intro {
         position:relative;
         top:-500px;
 
-        font-size:4vw;
+
         animation: musicianAnim 1s;
         animation-fill-mode: forwards;
     }
 
+    .musician-hover {
+        animation: musicianHover 1s linear;
+        animation-iteration-count: infinite;
+    }
+
     
     .boxer {
-        opacity:0;
+        opacity: 1;
         font-family: 'Permanent Marker', cursive;
         color:red;
         font-size:3vw;
         position:absolute;
         left:0;
         top:0;
+
+        transform:rotate(0deg);
+        
+        
+    }
+
+    .boxer-intro {
+        opacity:0;
         animation: boxerAnim 0.8s ease 4.3s;
         animation-fill-mode: forwards; 
-        
+    }
+
+    .boxer-hover {
+        animation: boxerHover 1s linear;
+        animation-iteration-count: infinite;
     }
 
     .and {
@@ -204,9 +315,10 @@ export default {
         animation: andAnim 0.8s ease 5.5s;
         animation-fill-mode: forwards; 
     }
+    
 
     .artist {
-        opacity:0;
+        opacity:1;
         -webkit-text-stroke: 2px rgb(13, 235, 150);
         color:black;
         font-family: 'Shrikhand', cursive;
@@ -215,9 +327,17 @@ export default {
         position:absolute;
         right:0;
         top:0;
+    }
 
+    .artist-intro {
+        opacity:0;
         animation: artistAnim 1s ease 5s;
         animation-fill-mode: forwards; 
+    }
+
+    .artist-hover {
+        animation: artistHover 1s linear;
+        animation-iteration-count: infinite;
     }
 
     .front-end {
@@ -225,7 +345,15 @@ export default {
         color:black;
         font-size: 7vw;
         font-family: 'Kanit', sans-serif;
-        
+
+        animation-fill-mode: forwards; 
+
+        position: relative;
+        transition:top 1s;
+    
+    }
+
+    .front-end-intro {
         position:relative;
         top:500px;
 
@@ -255,14 +383,17 @@ export default {
         color:white;
 
         position:absolute;
-        top:60%;
+        top:70%;
         left:50%;
         transform:translateX(-50%);
+
+        overflow:hidden;
         
     }
 
     svg {
         color:white;
+        overflow:hidden;
     }
 
     /* ------------------- INDIVIDUAL TEXT END ----------------*/
@@ -327,7 +458,8 @@ export default {
         height:auto;
         width:100%;
 
-        overflow-x:hidden;
+        overflow:hidden;
+        cursor:default;
     }
 
     .img-container {

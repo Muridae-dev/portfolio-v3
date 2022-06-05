@@ -73,7 +73,7 @@ export default {
               `In the marketplace you can view other users items, filter items using tags and REQUEST TRADEs. When a trade request 
               is made the owner of the item will be notified in the "Inventory" route and can then choose to ACCEPT TRADE, where the requesting user will then aquire said item in 
               their inventory.`],
-              logos: ["mongodb.png", "express.svg", "react.png", "nodejs.png"]
+              logos: ["mongodb.png", "react.png", "nodejs.png"]
             },
             {
               name: 'blackjack',
@@ -92,7 +92,7 @@ export default {
               creators, in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database.`,
               `This was a group project in where the focus was on collaboration. We worked with an agile/scrum setup with weekly sprints, in where my focus was mainly backend
               and functionality`],
-              logos: ["mongodb.png", "express.svg", "react.png", "nodejs.png"]
+              logos: ["mongodb.png", "react.png", "nodejs.png"]
             },
             {
               name: 'quiz',

@@ -14,7 +14,7 @@
                 </p>
 
                 <div class="logo-container">
-                    <div v-for="logo in portfolioItem.logos" :key="logo">
+                    <div v-for="logo in portfolioItem.logos" :key="logo" style="padding:5px;">
                         <img :src="require(`../assets/framework-icons/${logo}`)"/>
 
                     </div>
@@ -141,7 +141,7 @@ export default {
   }
 
     img {
-        height:auto;
-        width:100px;
+        height:100px;
+        width:auto;
     }
 </style>

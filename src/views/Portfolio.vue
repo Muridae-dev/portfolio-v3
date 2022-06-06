@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import AOS from "aos";
 import PortfolioModal from "../components/PortfolioModal.vue"
+import AOS from "aos";
 
 
 export default {
@@ -235,96 +235,5 @@ export default {
     opacity:1;
   }
 
-  /* PORTFOLIO PAGES BOXES 
-  .save-miss-x {
-    top:50px;
-    left:0;
-
-    border:3px solid gold;
-    height:500px;
-    width:900px;
-  }
-
-  .marketplace {
-    position:absolute;
-    top:40px;
-    left:calc(50% + 95px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:500px;
-    width:900px;
-  }
-
-  .the-hills {
-    position:absolute;
-    top:210px;
-    left:calc(50% + 120px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:300px;
-    width:200px;
-  }
-
-  .dodge-the-virus {
-    position:absolute;
-    top:370px;
-    left:calc(50% - 150px);
-    transform:translate(-50%,0);
-
-    border:3px solid gold;
-    height:200px;
-    width:300px;
-  }
-
-  .sabimango-quiz {
-    position:absolute;
-    top:530px;
-    left:calc(50% + 170px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:150px;
-    width:300px;
-  }
-
-  .black-jack {
-    position:absolute;
-    top:590px;
-    left:calc(50% - 100px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:200px;
-    width:200px;
-  }
-
-  .day-night-home-page {
-    position:absolute;
-    top:700px;
-    left:calc(50% + 95px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:150px;
-    width:150px;
-    
-  }
-
-  .tomb-raiders {
-    position:absolute;
-    top:810px;
-    left:calc(50% - 150px);
-    transform: translate(-50%,0);
-
-    border:3px solid gold;
-    height:150px;
-    width:300px;
-  }
-
-
-
-  /*          END          */
 
 </style>

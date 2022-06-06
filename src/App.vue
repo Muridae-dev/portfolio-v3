@@ -1,13 +1,12 @@
 <template>
   <div class="container-main" ref="Home">
-    <!-- SENDING THE COMPONENT ARRAY TO THE HEADER IN ABLE TO ACTIVATE EACH WINDOW 
-    <HeaderNav :componentArray="windowedComponents"/>-->
+
     <div v-for="thumbnail in windowedComponents"
       :key="thumbnail.name" class="thumbnail" 
       @click="thumbnail.useWindow ? (thumbnail.isActive = !thumbnail.isActive, currentZ++, thumbnail.zIndex = currentZ) : noNewWindow(thumbnail)"
       :style="{'left' : thumbnail.xPos ,'top' : thumbnail.yPos}"
     >
-      <img :src="require(`${thumbnail.thumbnail}`)" style="height:100px;width:auto;" /><br />
+      <img :src="require(`${thumbnail.thumbnail}`)" class="thumbnail-image" /><br />
       {{thumbnail.name}}
     </div>
 
@@ -16,7 +15,7 @@
       :key="windowedComponent.component" 
       @click="currentZ != windowedComponent.zIndex ? (currentZ++, windowedComponent.zIndex = currentZ) : null;"
     >
-      <NewWindow v-if="windowedComponent.isActive" :windowedComponent="windowedComponent">
+      <NewWindow v-if="windowedComponent.isActive && windowedComponent.name != 'About Me'" :windowedComponent="windowedComponent">
         <component :is="windowedComponent.component">
         </component>
       </NewWindow>
@@ -26,14 +25,18 @@
   
     <Mascots v-if="mascotsActive"/>
     
-    <Intro />
+    <!--<Intro />-->
         
     <div ref="Work" class="container-portfolio">
       <Portfolio />
     </div>
 
     <div ref="About Me" class="container-about">
-      <AboutMe />
+      <AboutMeIntro v-if="windowedComponents[3].isActive" :arrowDownFunc="() => goto('About Me 2')"/>
+      
+    </div>
+    <div ref="About Me 2" class="container-about-2">
+      <AboutMe v-if="windowedComponents[3].isActive"/>
     </div>
 
   
@@ -46,6 +49,7 @@ import Portfolio from "./views/Portfolio.vue"
 import HomeView from "./views/HomeView.vue"
 import Travel from "./views/Travel.vue"
 import Intro from "./views/Intro.vue"
+import AboutMeIntro from "./views/AboutMeIntro.vue"
 import AboutMe from "./views/AboutMe.vue"
 import Drawing from "./views/Drawing.vue"
 import Mascots from "./components/Mascots.vue"
@@ -53,6 +57,7 @@ import Mascots from "./components/Mascots.vue"
 // MOVE X SCROLL TO APPROPRIATE PLACE ON RESIZE
 $(window).resize(function () {
   let halfWV = window.innerWidth / 2;
+  console.log(window.pageXOffset , window.innerWidth)
   if(window.pageXOffset < halfWV) {
     window.scrollTo({
               left: 0,
@@ -67,6 +72,17 @@ $(window).resize(function () {
   }
 })
 
+$(window).scroll(function () {
+  if(window.pageXOffset >= window.innerWidth - 100) { 
+          if(window.pageYOffset > window.innerHeight) {
+            window.scrollTo({
+                  top:window.innerHeight,
+                  
+            })
+          }
+  }
+})
+
   export default {
     name: "App",
     components: {
@@ -76,6 +92,7 @@ $(window).resize(function () {
       HomeView,
       Travel,
       Intro,
+      AboutMeIntro,
       AboutMe,
       Drawing,
       Mascots
@@ -91,9 +108,9 @@ $(window).resize(function () {
             component: "Portfolio",
             isActive: false,
             name: "Work",
-            thumbnail: "./assets/icons/portfolio.png",
+            thumbnail: "./assets/framework-icons/javascript.svg",
             zIndex: 0,
-            xPos: '10%',
+            xPos: '20%',
             yPos: '10%',
             useWindow: false,
           },
@@ -105,8 +122,8 @@ $(window).resize(function () {
             defaultSizeY: '800px',
             thumbnail: "./assets/intro/muridae.png",
             zIndex: 0,
-            xPos: '100%',
-            yPos: '0%',
+            xPos: window.innerWidth > 1300 ? '100%' : '0%',
+            yPos: window.innerWidth > 1300 ? '0%' : '-100%',
             useWindow: false
           },
           {
@@ -117,12 +134,12 @@ $(window).resize(function () {
             defaultSizeY: '800px',
             thumbnail: "./assets/mascots/murky.png",
             zIndex: 0,
-            xPos: '10%',
+            xPos: '20%',
             yPos: '70%',
             useWindow: true
           },
           {
-            component: "AboutMe",
+            component: "AboutMeIntro",
             isActive: false,
             name: "About Me",
             defaultSizeX: '800px',
@@ -162,8 +179,14 @@ $(window).resize(function () {
     methods: {
       noNewWindow(thumbnail) {
         if(thumbnail.name == "Mascots") {this.mascotsActive = !this.mascotsActive}
-        else {this.goto(thumbnail.name)}
-      
+        else {
+          if(thumbnail.name == "About Me") {
+            thumbnail.isActive = true;
+            console.log(thumbnail.isActive)
+          }
+          this.goto(thumbnail.name)
+          }
+          
 
         console.log(thumbnail.name)
       },
@@ -174,7 +197,6 @@ $(window).resize(function () {
             var top = element.offsetTop;
             var left = element.offsetLeft;
             
-
             window.scrollTo({
               top: top,
               left: left,
@@ -205,6 +227,20 @@ $(window).resize(function () {
                     behavior: 'smooth'
           });
         }
+
+        // IF PAGE STARTS AT ABOUT ME IT SHOWS
+        if(window.pageXOffset >= window.innerWidth - 100) {
+          this.windowedComponents[3].isActive = true;
+          
+          if(window.pageYOffset > window.innerHeight*2) {
+            window.scrollTo({
+                  top:window.innerHeight,
+                  behavior: 'smooth'
+            })
+          }
+        }
+
+        
     }
   }
 </script>
@@ -280,22 +316,17 @@ body::-webkit-scrollbar-thumb
   z-index: -1;
 }
 
-.thumbnail-container {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
+
+.thumbnail-image {
+  height:8vw;
+  width:auto;
+  min-height:100px;
 }
 
 .thumbnail {
-  height:auto;
-  width:auto;
-  float:left;
   position:absolute;
-  text-align:center;
-  min-width: 100px;
   cursor:pointer;
+  font-size:1.5em;
 
   animation: thumbnailAnim 1.5s ease;
 
@@ -312,9 +343,17 @@ body::-webkit-scrollbar-thumb
   height:150px;
 }
 
+@media only screen and (max-width: 1350px) {
+  .thumbnail {
+    font-size:1.2em;
+  }
+}
+
 
 
 /* ------------------- THUMBNAIL END ----------------*/
+
+/* ------------------- CONTAINERS ----------------*/
 
 .container-main {
   height: 100vh;
@@ -326,7 +365,7 @@ body::-webkit-scrollbar-thumb
   height:auto;
   width:100vw;
   position:absolute;
-  top:100%;
+  top:100vh;
 }
 
 .container-about {
@@ -339,8 +378,36 @@ body::-webkit-scrollbar-thumb
 
   z-index: -1;
 
-
 }
+
+.container-about-2 {
+  height:100vh;
+  width:100vw;
+
+  position:absolute;
+  top:100vh;
+  left:100vw;
+
+  
+}
+
+@media only screen and (max-width: 1350px) {
+  .container-portfolio {
+    top:360vh;
+  }
+
+  .container-about {
+    top:120vh;
+    left:0;
+  }
+
+  .container-about-2 {
+    top:240vh;
+    left:0;
+  }
+}
+
+/* ------------------- CONTAINERS END ----------------*/
 
 .center-align-text {
   position:relative;

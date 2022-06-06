@@ -81,7 +81,7 @@ export default {
   }
   
   .left-coming-logo {
-    height:12rem;
+    height:12vw;
     width:auto;
     transform:rotate(-8deg) translate(-50%, -50%);
   
@@ -89,7 +89,7 @@ export default {
   
     animation: leftAnim 1.5s ease;
     position:absolute;
-    top:calc(43% - 15rem);
+    top:calc(43% - 15vw);
     left:44%;
     
   }
@@ -97,18 +97,18 @@ export default {
   @keyframes rightAnim {
     0% {top:300%; }
     50% {top:300%;}
-    100% {top:calc(43% - 7rem);}
+    100% {top:calc(43% - 7vw);}
   }
   
   .right-coming-logo {
-    height:6rem;
+    height:6vw;
     width:auto;
   
     font-size:6rem;
     
     animation: rightAnim 2s ease 0s;
     position:absolute;
-    top:calc(43% - 7rem);
+    top:calc(43% - 7vw);
     left:50%;
     transform:rotate(8deg) translate(-50%);
   }
@@ -120,14 +120,14 @@ export default {
   }
 
   .fading-in-logo {
-      height:30rem;
+      height:30vw;
       width:auto;
 
       font-size:10rem;
 
       animation: fadeAnim 4s ease 0s;
       position:absolute;
-      top:calc(43% - 2rem);
+      top:calc(43% - 2vw);
       left:50%;
       transform:translate(-50%);
   }

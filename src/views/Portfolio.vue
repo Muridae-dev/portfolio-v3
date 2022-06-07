@@ -280,7 +280,7 @@ export default {
 
   .icon-container {
     height:90px;
-    width:400px;
+    width:auto;
     margin:auto;
 
     
@@ -310,6 +310,8 @@ export default {
 
   footer {
     position:relative;
+    left:50%;
+    transform:translateX(-50%);
     height:150px;
     padding-top:100px;
     padding-bottom:100px;
@@ -320,6 +322,7 @@ export default {
 
     overflow-x: hidden;
   }
+
 
   svg {
     filter:invert(100%);

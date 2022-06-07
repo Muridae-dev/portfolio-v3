@@ -1,6 +1,11 @@
 <template>
     <div class="modal-mask" @click="closeFunc">
-        <div class="modal-container" id="style-4">
+    </div>
+
+        <div class="modal" id="style-4">
+            <div class="close-x" @click="closeFunc">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+            </div>
             <h1>{{portfolioItem.name}}</h1>
             <div class="video-container">
                 <video muted preload="metadata" style="z-index: 1;" autoplay="true" controls>
@@ -22,7 +27,8 @@
             </div>
             
         </div>
-    </div>
+
+    
 </template>
 
 <script>
@@ -64,7 +70,7 @@ export default {
     }
     .modal-mask {
         position: fixed;
-        z-index: 9998;
+        z-index: 9;
         top: 0;
         left: 0;
         width: 100%;
@@ -73,19 +79,37 @@ export default {
         display: table;
         animation: opacityAnim 0.3s linear;
     }
+
     
-    .modal-container {
-        height:80%;
-        width:90%;
+    .modal {
+        height:80vh;
+        width:90vw;
         background:black;
         border:3px solid rgb(4, 255, 150);
 
-        position: absolute;
+        position: fixed;
         top:50%;
         left:50%;
         transform:translate(-50%,-50%);
         overflow-y:scroll;
+
+        z-index: 10;
+
         
+        
+    }
+
+    .close-x {
+        position: absolute;
+        top:40px;
+        left:calc(100% - 50px);
+        transform: translate(0,-50%);
+
+
+        height:40px;
+        width:40px;
+
+        cursor:pointer;
     }
 
     .video-container {

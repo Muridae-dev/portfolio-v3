@@ -174,6 +174,29 @@ export default {
       50% {left: 60%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(0.15);}
       100% {left:40%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(1);}
     }
+
+    @media only screen and (max-height: 750px) {
+      .left-coming-logo {
+        height:80px;
+        top:20%;
+      }
+
+      .right-coming-logo {
+        height:40px;
+        top:calc(20% + 90px);
+      }
+
+      .fading-in-logo {
+        height:180px;
+        top:calc(20% + 165px);
+      }
+
+      @keyframes rightAnim {
+        0% {top:300%; }
+        50% {top:300%;}
+        100% {top:calc(20% + 90px);}
+      }
+    }
   }
 
 

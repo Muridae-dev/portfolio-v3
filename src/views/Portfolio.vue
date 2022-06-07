@@ -308,6 +308,27 @@ export default {
     height:auto;
   }
 
+  footer {
+    position:relative;
+    height:150px;
+    padding-top:100px;
+    padding-bottom:100px;
+    width:90vw;
+    background:black;
+    text-align:center;
+    font-family: 'Source Code Pro', monospace;
+
+    overflow-x: hidden;
+  }
+
+  svg {
+    filter:invert(100%);
+    width:50px;
+
+    padding-left:10px;
+    padding-right:10px;
+  }
+
   }
 
 

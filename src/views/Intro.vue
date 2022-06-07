@@ -177,15 +177,16 @@ export default {
     }
 
     @-webkit-keyframes leftAnim {
-      0% {left: -400%; transform:translate(-50%, -50%) rotate(-8deg)  scaleX(6); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
-      50% {left: 60%; transform:translate(-50%, -50%) rotate(-8deg)  scaleX(0.15); -webkit-transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(0.15) translate(-50%, -50%);}
-      100% {left:40%; transform:translate(-50%, -50%) rotate(-8deg) scaleX(1); -webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);}
+      0% {left: -400%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(6); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
+      50% {left: 60%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(0.15); -webkit-transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(0.15) translate(-50%, -50%);}
+      100% {left:40%; transform: rotate(-8deg) translate(-50%, -50%) scaleX(1); -webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);}
     }
 
     @media only screen and (max-height: 750px) {
       .left-coming-logo {
         height:80px;
         top:20%;
+        transform:rotate(-8deg) translate(-50%, -50%);
       }
 
       .right-coming-logo {

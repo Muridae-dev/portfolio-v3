@@ -110,7 +110,7 @@ $(window).scroll(function () {
             name: "Work",
             thumbnail: "./assets/framework-icons/javascript.svg",
             zIndex: 0,
-            xPos: '20%',
+            xPos: window.innerWidth > 750 ? '20%' : '38%',
             yPos: '10%',
             useWindow: false,
           },
@@ -130,12 +130,12 @@ $(window).scroll(function () {
             component: "Travel",
             isActive: false,
             name: "Travel",
-            defaultSizeX: '1000px',
-            defaultSizeY: '800px',
+            defaultSizeX: window.innerWidth > 750 ? '1000px' : (window.innerWidth - 20) + 'px',
+            defaultSizeY: window.innerWidth > 750 ? '800px' : (window.innerHeight - 20) + 'px',
             thumbnail: "./assets/mascots/murky.png",
             zIndex: 0,
-            xPos: '20%',
-            yPos: '70%',
+            xPos: window.innerWidth > 750 ? '20%' : '32%',
+            yPos: window.innerWidth > 750 ? '70%' : '50%',
             useWindow: true
           },
           {
@@ -146,7 +146,7 @@ $(window).scroll(function () {
             defaultSizeY: '800px',
             thumbnail: "./assets/icons/portfolio.png",
             zIndex: 0,
-            xPos: '70%',
+            xPos: window.innerWidth > 750 ? '70%' : '42%',
             yPos: '70%',
             useWindow: false
           },
@@ -154,12 +154,12 @@ $(window).scroll(function () {
            component: "Drawing",
             isActive: false,
             name: "Draw Here!",
-            defaultSizeX: '800px',
-            defaultSizeY: '800px',
+            defaultSizeX: window.innerWidth > 750 ? '800px' : (window.innerWidth - 20) + 'px',
+            defaultSizeY: window.innerWidth > 750 ? '800px' : (window.innerHeight - 20) + 'px',
             thumbnail: "./assets/mascots/hogger.png",
             zIndex: 0,
-            xPos: '15%',
-            yPos: '40%',
+            xPos: window.innerWidth > 750 ? '15%' : '38%',
+            yPos: window.innerWidth > 750 ? '40%' : '30%',
             useWindow: true
           },
           {
@@ -168,8 +168,8 @@ $(window).scroll(function () {
             name: "Mascots",
             thumbnail: "./assets/mascots/occult2.png",
             zIndex: 0,
-            xPos: "70%",
-            yPos: "10%",
+            xPos: window.innerWidth > 750 ? "70%" : "0%",
+            yPos: window.innerWidth > 750 ? "10%" : "-100%",
             useWindow: false
             
           }
@@ -210,7 +210,7 @@ $(window).scroll(function () {
       leaveThumbnail(e) {
         //ERROR HANDLING
         if(e.target.children[0]) e.target.children[0].classList.remove("thumbActive")
-      }
+      },
     },
     mounted() {
         // MAKING SURE X POSITION IS CORRECT ON LOAD
@@ -240,7 +240,11 @@ $(window).scroll(function () {
           }
         }
 
-        
+        window.addEventListener('scroll', () => 
+        {if(window.innerWidth <= 1350 && window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[3].isActive = true});
+    },
+    created() {
+      
     }
   }
 </script>
@@ -393,18 +397,35 @@ body::-webkit-scrollbar-thumb
 
 @media only screen and (max-width: 1350px) {
   .container-portfolio {
-    top:360vh;
+    top:340vh;
   }
 
   .container-about {
-    top:120vh;
+    top:100vh;
     left:0;
   }
 
   .container-about-2 {
-    top:240vh;
+    top:200vh;
     left:0;
   }
+
+  @media only screen and (max-height: 700px) {
+    .container-portfolio {
+      top:380vh;
+    }
+
+    .container-about {
+      top:120vh;
+      left:0;
+    }
+
+    .container-about-2 {
+      top:220vh;
+      left:0;
+    }
+  }
+
 }
 
 /* ------------------- CONTAINERS END ----------------*/

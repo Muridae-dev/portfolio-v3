@@ -508,6 +508,10 @@ export default {
             width:30vw;
         }
 
+        svg {
+            overflow:visible;
+        }
+
         .arrow-down-intro { 
             top:400%;
         }
@@ -557,7 +561,7 @@ export default {
         position:relative;
         top:-10vw;
 
-        overflow-y:hidden;
+        overflow-y:visible;
         z-index:-1;
 
     }
@@ -626,6 +630,7 @@ export default {
     @media only screen and (max-width: 650px) { 
         .container {
             height:100%;
+            
         }
     }
 
@@ -638,6 +643,12 @@ export default {
     @media only screen and (max-width: 480px) { 
         .container {
             height:70%;
+        }
+
+        @media only screen and (max-height: 700px) { 
+            .container {
+                height:90%;
+            }
         }
     }
 

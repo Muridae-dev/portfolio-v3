@@ -21,7 +21,7 @@
 
         
 
-        <div class="text-2" v-if="screenWidth > 1300"
+        <div class="text-2" v-if="screenWidth > 750"
         data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
             <p>
                 When not programming I love to do martial arts, go for adventures on my bike, draw, play videogames, make videogames,
@@ -98,7 +98,7 @@ export default {
         font-size:1.2em;
     }
 
-    @media only screen and (max-width: 1300px) { 
+    @media only screen and (max-width: 750px) { 
         .text-1 {
             position:relative;
             top:unset;
@@ -159,7 +159,7 @@ export default {
         height:auto;
     }
 
-    @media only screen and (max-width: 1300px) { 
+    @media only screen and (max-width: 750px) { 
         .img-container {
             position:relative;
             top:unset;

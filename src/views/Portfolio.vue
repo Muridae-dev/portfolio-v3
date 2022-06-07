@@ -13,8 +13,8 @@
       
         <div class="headline-text">{{item.name}}</div>
         <div class="video-container" :class="{leftPos: item.isActive}">
-          <img :src="require(`../assets/demos/${item.name}_demo.png`)" style="height:100%;width:100%; z-index: 0;"/>
-          <video muted preload="metadata" @mouseover="hoverVideo" @mouseleave="hideVideo" style="z-index: 1;">
+          <img :src="require(`../assets/demos/${item.name}_demo.png`)" :style="item.name == 'marketplace' ? {left: '0', top: '0', transform: 'translate(0,0)'} : null"/>
+          <video muted preload="metadata" @mouseover="hoverVideo" @mouseleave="hideVideo" style="z-index: 1;" v-if="windowWidth > 1000">
             <source :src="require(`../assets/demos/${item.name}_demo.mp4`)" type="video/mp4">
           </video>
         </div>
@@ -41,6 +41,7 @@ export default {
 
   data() {
     return {
+      windowWidth: window.innerWidth,
       portfolioItems: [
             {
               name: 'savemissx',
@@ -204,6 +205,9 @@ export default {
 
   img {
     overflow:hidden;
+    height:100%;
+    width:100%; 
+    z-index: 0;
   }
 
   .portfolio-demos {
@@ -233,6 +237,30 @@ export default {
 
   .active {
     opacity:1;
+  }
+
+  @media only screen and (max-width: 1000px) { 
+  .portfolio-items {
+      width:90vw;
+      height:auto;
+      position:relative;
+      overflow:hidden;
+      padding:6px;
+      transition: width 0.5s;
+  }
+
+  .video-container {
+    width:90vw;
+    height:auto;
+    overflow-y:hidden;
+    position:relative;
+  }
+
+  img {
+    width:100%;
+    height:auto;
+  }
+
   }
 
 

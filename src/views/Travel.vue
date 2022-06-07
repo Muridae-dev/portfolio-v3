@@ -1,8 +1,6 @@
 <template>
     <div v-for="image in images" :key="image.width" style="height:auto; width:auto; float:left;">
-        <img :src="image.src" :style="{
-            'height' : '500px', 
-            'width' :'auto'}"/>
+        <img :src="image.src" :style=" windowWidth > 1300 ? {'height' : '500px', 'width' :'auto'} : {'height' : 'auto', 'width' : '90%'}"/>
     </div>
 </template>
 
@@ -14,7 +12,8 @@ export default {
             images: [],
             imagesWide: [],
             imagesSquare: [],
-            imagesPortrait: []
+            imagesPortrait: [],
+            windowWidth: window.innerWidth,
         }
     },
     async created() {

@@ -3,7 +3,7 @@
         <div class="modal-container" id="style-4">
             <h1>{{portfolioItem.name}}</h1>
             <div class="video-container">
-                <video muted preload="metadata" style="z-index: 1;" autoplay="true">
+                <video muted preload="metadata" style="z-index: 1;" autoplay="true" controls>
                     <source :src="require(`../assets/demos/${portfolioItem.name}_demo.mp4`)" type="video/mp4">
                 </video>
                 
@@ -28,7 +28,8 @@
 <script>
 export default {
     name: "PortfolioModal",
-    props: ["closeFunc", "portfolioItem"]
+    props: ["closeFunc", "portfolioItem"],
+
     
 }
 </script>
@@ -62,15 +63,15 @@ export default {
 
     }
     .modal-mask {
-    position: fixed;
-    z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: table;
-    animation: opacityAnim 0.3s linear;
+        position: fixed;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: table;
+        animation: opacityAnim 0.3s linear;
     }
     
     .modal-container {
@@ -88,9 +89,9 @@ export default {
     }
 
     .video-container {
-    width:900px;
-    height:540px;
-    overflow:hidden;
+        width:900px;
+        height:540px;
+        overflow:hidden;
     
   }
 
@@ -116,32 +117,55 @@ export default {
     }
 
     video {
-    height:540px;
-    width:960px;
-    
-    overflow:hidden;
-  }
+        height:540px;
+        width:960px;
+        
+        overflow:hidden;
+    }
 
-  .description-container {
-      min-height: 400px;
-      width:600px;
-      padding-left:5%;
-      text-align: left;
-  }
+    .description-container {
+        min-height: 400px;
+        width:600px;
+        padding-left:5%;
+        text-align: left;
+    }
 
 
-  .logo-container {
-      height:150px;
-      width:600px;
-      margin:auto;
-      padding-top:5%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-  }
+    .logo-container {
+        height:150px;
+        width:600px;
+        margin:auto;
+        padding-top:5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
     img {
         height:100px;
         width:auto;
+    }
+
+    @media only screen and (max-width: 1000px) { 
+        .video-container {
+            width:80vw;
+            height:auto;
+            overflow-y:hidden;
+        }
+
+        video {
+            width:90vw;
+            height:auto;
+        }
+
+        .description-container {
+            width:60vw;
+        }
+
+        .logo-container {
+            width:60vw;
+        }
+
     }
 </style>

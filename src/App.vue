@@ -110,8 +110,8 @@ $(window).scroll(function () {
             name: "Work",
             thumbnail: "./assets/framework-icons/javascript.svg",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '20%' : '38%',
-            yPos: '10%',
+            xPos: window.innerWidth > 750 ? '20%' : '10%',
+            yPos: window.innerWidth > 750 ? '15%' : '5%',
             useWindow: false,
           },
           {
@@ -134,8 +134,8 @@ $(window).scroll(function () {
             defaultSizeY: window.innerWidth > 750 ? '800px' : (window.innerHeight - 20) + 'px',
             thumbnail: "./assets/mascots/murky.png",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '20%' : '32%',
-            yPos: window.innerWidth > 750 ? '70%' : '50%',
+            xPos: window.innerWidth > 750 ? '20%' : '10%',
+            yPos: window.innerWidth > 750 ? '70%' : '75%',
             useWindow: true
           },
           {
@@ -146,8 +146,8 @@ $(window).scroll(function () {
             defaultSizeY: '800px',
             thumbnail: "./assets/icons/portfolio.png",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '70%' : '42%',
-            yPos: '70%',
+            xPos: window.innerWidth > 750 ? '70%' : '70%',
+            yPos: window.innerWidth > 750 ? '70%' : '75%',
             useWindow: false
           },
           {
@@ -158,8 +158,8 @@ $(window).scroll(function () {
             defaultSizeY: window.innerWidth > 750 ? '800px' : (window.innerHeight - 20) + 'px',
             thumbnail: "./assets/mascots/hogger.png",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '15%' : '38%',
-            yPos: window.innerWidth > 750 ? '40%' : '30%',
+            xPos: window.innerWidth > 750 ? '13%' : '70%',
+            yPos: window.innerWidth > 750 ? '40%' : '5%',
             useWindow: true
           },
           {
@@ -169,7 +169,7 @@ $(window).scroll(function () {
             thumbnail: "./assets/mascots/occult2.png",
             zIndex: 0,
             xPos: window.innerWidth > 750 ? "70%" : "0%",
-            yPos: window.innerWidth > 750 ? "10%" : "-100%",
+            yPos: window.innerWidth > 750 ? "14%" : "-100%",
             useWindow: false
             
           }

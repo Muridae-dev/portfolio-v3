@@ -68,6 +68,7 @@ export default {
       transform: scale(0.5);
       overflow:hidden;
       pointer-events: none;
+      opacity:1;
 
       animation: sizeAnim 5s ease;
 
@@ -75,13 +76,13 @@ export default {
   }
   
   @keyframes leftAnim {
-    0% {left: -200%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(6);}
+    0% {left: -400%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(6);}
     50% {left: 60%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(0.15);}
     100% {left:44%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(1);}
   }
   
   .left-coming-logo {
-    height:12vw;
+    height:200px;
     width:auto;
     transform:rotate(-8deg) translate(-50%, -50%);
   
@@ -89,7 +90,7 @@ export default {
   
     animation: leftAnim 1.5s ease;
     position:absolute;
-    top:calc(43% - 15vw);
+    top:23%;
     left:44%;
     
   }
@@ -97,18 +98,18 @@ export default {
   @keyframes rightAnim {
     0% {top:300%; }
     50% {top:300%;}
-    100% {top:calc(43% - 7vw);}
+    100% {top:calc(23% + 100px);}
   }
   
   .right-coming-logo {
-    height:6vw;
+    height:100px;
     width:auto;
   
     font-size:6rem;
     
     animation: rightAnim 2s ease 0s;
     position:absolute;
-    top:calc(43% - 7vw);
+    top:calc(23% + 100px);
     left:50%;
     transform:rotate(8deg) translate(-50%);
   }
@@ -120,15 +121,60 @@ export default {
   }
 
   .fading-in-logo {
-      height:30vw;
+      height:400px;
       width:auto;
 
       font-size:10rem;
 
       animation: fadeAnim 4s ease 0s;
       position:absolute;
-      top:calc(43% - 2vw);
+      top:calc(23% + 160px);
       left:50%;
-      transform:translate(-50%);
+      transform:translate(-50%,0);
   }
+
+  @media only screen and (max-width: 750px) { 
+    .logo-container {
+      transform: scale(0.8);
+    }
+
+    .left-coming-logo {
+      height:80px;
+      left:40%
+    }
+
+    .right-coming-logo {
+      height:40px;
+      top:calc(23% + 90px);
+    }
+
+    .fading-in-logo {
+      height:180px;
+      top:calc(23% + 165px);
+    }
+
+    @keyframes sizeAnim {
+        /*0% {opacity:1;top:0;}
+        66% {opacity:1;top:0;}
+        90% {opacity:1; top:-100%;}
+        100% {opacity:1; top:-100%;}*/
+        0% {transform: scale(1);z-index:0;}
+        66% {transform: scale(1);}
+        90% {transform: scale(0.8);z-index:0;}
+    }
+
+    @keyframes rightAnim {
+      0% {top:300%; }
+      50% {top:300%;}
+      100% {top:calc(23% + 90px);}
+    }
+
+    @keyframes leftAnim {
+      0% {left: -400%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(6);}
+      50% {left: 60%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(0.15);}
+      100% {left:40%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(1);}
+    }
+  }
+
+
 </style>

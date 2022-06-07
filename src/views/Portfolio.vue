@@ -274,6 +274,8 @@ export default {
     background:black;
     text-align:center;
     font-family: 'Source Code Pro', monospace;
+
+    overflow-x: hidden;
   }
 
   .icon-container {

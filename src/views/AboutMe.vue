@@ -6,14 +6,14 @@
         </div>
 
         <div class="text-1"
-        data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
+        :data-aos="screenWidth > 1300 ? 'fade-down' : 'fade'" data-aos-duration="1000" data-aos-delay="500">
             <p>I'm a front-end student at Hyper Island in Sweden. </p>
             <p>I like to solve complex problems with creative solutions using programming. </p>
             <p>Languages and frameworks I have worked with include, Javascript, React, Vue, Node.js & Haxe
             and have dipped my toes in Java, C++, C# & Python. </p>
         </div>
 
-        <div class="text-3" data-aos="fade-down" data-aos-duration="1000" :data-aos-delay="screenWidth > 1300 ? 1500 : 0">
+        <div class="text-3" :data-aos="screenWidth > 1300 ? 'fade-down' : 'fade'" data-aos-duration="1000" :data-aos-delay="screenWidth > 1300 ? 1500 : 0">
             CONTACT INFO<br/>
             nhlund@gmail.com<br/>
             <a href="https://www.linkedin.com/in/noah-lundberg-02142021b/">linkedin</a>

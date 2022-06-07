@@ -25,7 +25,7 @@
   
     <Mascots v-if="mascotsActive"/>
     
-    <!--<Intro />-->
+    <Intro />
         
     <div ref="Work" class="container-portfolio">
       <Portfolio />

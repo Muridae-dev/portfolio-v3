@@ -171,8 +171,8 @@ export default {
 
     @keyframes leftAnim {
       0% {left: -400%; transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
-      50% {left: 60%; transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
-      100% {left:40%; transform:rotate(-8deg) scaleX(1) translate(-50%, -50%); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
+      50% {left: 60%; transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -webkit-transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(0.15) translate(-50%, -50%);}
+      100% {left:40%; transform:rotate(-8deg) scaleX(1) translate(-50%, -50%); -webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);}
     }
 
     @media only screen and (max-height: 750px) {

@@ -85,6 +85,7 @@ export default {
     height:200px;
     width:auto;
     transform:rotate(-8deg) translate(-50%, -50%);
+    display:block;
   
     font-size:10rem;
   

@@ -140,47 +140,48 @@ export default {
         66% {opacity:1;top:0;}
         90% {opacity:1; top:-100%;}
         100% {opacity:1; top:-100%;}*/
-        0% {transform: scale(1);z-index:0;}
-        66% {transform: scale(1);}
+        0% {transform: scale(1.2);z-index:0;}
         90% {transform: scale(0.8);z-index:0;}
     }
 
-    @keyframes rightAnim {
-      0% {top:300%; }
-      50% {top:300%;}
-      100% {top:calc(23% + 90px);}
-    }
+    @keyframes opacityAnim {
+    /*0% {opacity:1;top:0;}
+    66% {opacity:1;top:0;}
+    90% {opacity:1; top:-100%;}
+    100% {opacity:1; top:-100%;}*/
+    0% {opacity:1;top:0;pointer-events: all;}
+    66% {opacity:1;top:0;pointer-events: all;}
+    75% {pointer-events: none;}
+    90% {opacity:0; }
+}
 
-    @keyframes leftAnim {
-      0% {left: -400%; transform:translate(-50%, -50%) rotate(-8deg)  scaleX(6); /*-webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);*/}
-      50% {left: 60%; transform:translate(-50%, -50%) rotate(-8deg)  scaleX(0.15); /*-webkit-transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(0.15) translate(-50%, -50%);*/}
-      100% {left:40%; transform:translate(-50%, -50%) rotate(-8deg) scaleX(1); /*-webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);*/}
-    }
-
-    @-webkit-keyframes leftAnim {
-      0% {left: -400%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(6); -webkit-transform:rotate(-8deg)  scaleX(6) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(6) translate(-50%, -50%);}
-      50% {left: 60%; transform:rotate(-8deg) translate(-50%, -50%) scaleX(0.15); -webkit-transform:rotate(-8deg)  scaleX(0.15) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(0.15) translate(-50%, -50%);}
-      100% {left:40%; transform: rotate(-8deg) translate(-50%, -50%) scaleX(1); -webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);}
-    }
 
     .logo-container {
       transform: scale(0.8);
+      animation:sizeAnim 1.5s;
+    }
+
+    .logo-background {
+      animation:opacityAnim 2s;
     }
 
     .left-coming-logo {
       height:80px;
       left:40%;
       transform:rotate(-8deg) translate(-50%, -50%);
+      animation:unset;
     }
 
     .right-coming-logo {
       height:40px;
       top:calc(23% + 90px);
+      animation:unset;
     }
 
     .fading-in-logo {
       height:180px;
       top:calc(23% + 165px);
+      animation:unset;
     }
 
 

@@ -5,8 +5,9 @@
                 position: 'absolute',
                 top: `${Math.round(Math.random()* 90)}%`,
                 left: `${Math.round(Math.random()* 90)}%`,
-                transform: 'translate(-50%,-50%)'
-            }, {'z-index' : imageData.zIndex}" @mousedown="dragMouseDown($event)"
+                transform: 'translate(-50%,-50%)',
+                'z-index' : imageData.zIndex
+            }" @mousedown="dragMouseDown($event)"
             @click="testing($event, imageData.zIndex)"
     />
 </template>
@@ -27,7 +28,7 @@ export default {
     },
     methods: {
         testing(e, data) {
-            console.log('TARGET STYLE:' + e.target.style.zIndex, 'DATA INDEX' + data)
+            //console.log('TARGET STYLE:' + e.target.style.zIndex, 'DATA INDEX' + data)
         },
         // -------------------- DRAG FUNCTIONS --------------------
         dragMouseDown: function(e) {
@@ -45,7 +46,7 @@ export default {
                 this.positions.movementY = this.positions.clientY - e.clientY;
                 this.positions.clientX = e.clientX;
                 this.positions.clientY = e.clientY;
-                console.log(e)
+                //console.log(e)
                 e.target.style.top = (e.y - this.positions.movementY) + "px";
                 e.target.style.left = (e.x - this.positions.movementX) + "px";
             }

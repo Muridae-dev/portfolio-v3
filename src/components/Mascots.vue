@@ -32,12 +32,12 @@ export default {
         this.images = await this.importAll(require.context('../assets/mascots', false, /\.(png|jpe?g|svg)$/))
         await this.images.forEach(image => {
             image.zIndex = this.currentZIndex;
-            console.log(image.zIndex);
+            //console.log(image.zIndex);
         })
     },
     methods: {
         testing(data) {
-            console.log(data)
+            //console.log(data)
         },
         // IMPORTING ALL IMAGES FROM MASCOTS FOLDER
         importAll(r) {
@@ -63,7 +63,7 @@ export default {
         top:0;
         left:0;
         z-index:2;
-        background: rgba(0, 0, 0, 0.397);
+        background: rgba(0, 0, 0, 0.87);
     }
 
     .close-x {

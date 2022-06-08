@@ -23,7 +23,7 @@
   </div>
 
   
-    <Mascots v-if="mascotsActive"/>
+    <Mascots v-if="mascotsActive" :mascotsActive="closeMascots"/>
     
     <Intro />
         
@@ -211,6 +211,9 @@ $(window).scroll(function () {
         //ERROR HANDLING
         if(e.target.children[0]) e.target.children[0].classList.remove("thumbActive")
       },
+      closeMascots() {
+        this.mascotsActive = false;
+      }
     },
     mounted() {
         // MAKING SURE X POSITION IS CORRECT ON LOAD
@@ -243,9 +246,7 @@ $(window).scroll(function () {
         window.addEventListener('scroll', () => 
         {if(window.innerWidth <= 1350 && window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[3].isActive = true});
     },
-    created() {
-      
-    }
+
   }
 </script>
 

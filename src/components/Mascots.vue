@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <div class="close-x" @click="mascotsActive()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+        </div>
         <div v-for="image in images" :key="image.src" @click="currentZIndex++, image.zIndex = currentZIndex, testing(image.zIndex)">
             <MascotsOne :imageData="image"/>
         </div>
@@ -13,6 +16,7 @@ import MascotsOne from "./MascotsOne.vue"
 // z-index ändras antagligen inte PGA det inte defineras i arrayn från början...
 export default {
     name: "Mascots",
+    props: ["mascotsActive"],
     components: {
         MascotsOne,
     },
@@ -60,5 +64,18 @@ export default {
         left:0;
         z-index:2;
         background: rgba(0, 0, 0, 0.397);
+    }
+
+    .close-x {
+        position: absolute;
+        top:40px;
+        left:calc(100% - 50px);
+        transform: translate(0,-50%);
+
+
+        height:40px;
+        width:40px;
+
+        cursor:pointer;
     }
 </style>

@@ -135,25 +135,6 @@ export default {
   }
 
   @media only screen and (max-width: 750px) { 
-    .logo-container {
-      transform: scale(0.8);
-    }
-
-    .left-coming-logo {
-      height:80px;
-      left:40%
-    }
-
-    .right-coming-logo {
-      height:40px;
-      top:calc(23% + 90px);
-    }
-
-    .fading-in-logo {
-      height:180px;
-      top:calc(23% + 165px);
-    }
-
     @keyframes sizeAnim {
         /*0% {opacity:1;top:0;}
         66% {opacity:1;top:0;}
@@ -182,11 +163,32 @@ export default {
       100% {left:40%; transform: rotate(-8deg) translate(-50%, -50%) scaleX(1); -webkit-transform:rotate(-8deg)  scaleX(1) translate(-50%, -50%); -ms-transform: rotate(-8deg)  scaleX(1) translate(-50%, -50%);}
     }
 
+    .logo-container {
+      transform: scale(0.8);
+    }
+
+    .left-coming-logo {
+      height:80px;
+      left:40%;
+      transform:rotate(-8deg) translate(-50%, -50%);
+    }
+
+    .right-coming-logo {
+      height:40px;
+      top:calc(23% + 90px);
+    }
+
+    .fading-in-logo {
+      height:180px;
+      top:calc(23% + 165px);
+    }
+
+
+
     @media only screen and (max-height: 750px) {
       .left-coming-logo {
         height:80px;
         top:20%;
-        transform:rotate(-8deg) translate(-50%, -50%);
       }
 
       .right-coming-logo {

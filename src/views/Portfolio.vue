@@ -30,11 +30,7 @@
     <a href="https://www.linkedin.com/in/noah-lundberg-02142021b/">  
       <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Linkedin</title><path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"/></svg>
     </a>
-    <a href="https://www.instagram.com/noahlundis/"> 
-      <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><title>Logo Instagram</title><path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>
-    </a>
     </div>
-    THIS SITE WAS MADE USING VUE.JS <br/>
     NOAH LUNDBERG 2022 - nhlund@gmail.com
   </footer>
 </template>
@@ -62,11 +58,20 @@ export default {
             {
               name: 'savemissx',
               isActive: false,
-              description: [`This is a game I made back in 2019 using haxe & haxeflixel, its a 2d platformer with character features such as: double jumping,
-              climbing, running, 5 unique attacks & animations and a power up feature called "RAGE", when activated
-              increases character movement-speed and attack-damage for a short window of time.`,
-              `It also features 2 kinds of enemies, one flying, one grounded, 7 different stages with three different backgrounds.`,
-              `It's built using classes, states, a map editor called "Ogmo editor" and all sprites and textures are handrawn by me using Aseprite.`],
+              description: [`I've been fascinated by video-games since I was 5 years old and got Pokemon Silver on GameBoy-Color and have ever since wanted
+              to make my own games. Back in 2019 I was between two jobs and decided to put the time I had into making my own game "SavemissX".
+              I was looking around at many different frameworks but many of them had a lot of graphical interfaces and I was more interested in raw coding
+              and found Haxe/Haxeflixel. It's a "High-level strictly-typed programming language", and in my experience somewhat similar to Java,
+              it is built using classes, states and functions/variables work very much in the same way as they do in Java.`,
+              `I began by following a tutorial on Haxeflixels website on how to create a simple overhead 2d-dungeon-runner. After I got the basics down I
+              started working on my own, changing large parts of code to fit a 2d-platformer rather than dungeon-runner, finding help and inspiration from their API-docs. 
+              I also found a tool called Aseprite that is an easy to use pixel-art editor to make my own sprites and backgrounds.`,
+              `In about two months of work I ended up with what you see now, "SavemissX" a 2d-platformer with many different features such as: double jumping, 
+              climbing, running, 5 unique attacks & animations and a power up feature called "RAGE". It also features 2 kinds of enemies, one flying, one grounded, 
+              7 different stages with 3 different backgrounds.`,
+              `It was so much fun to create my own game and I learned a lot about coding that I had only vaguely understood in the past and it was
+              great to be able to use that new knowledge in order to explore and try out different solutions for problems that arised.`,
+              ],
               logos: ["haxe.png", "haxeflixel.png", "aseprite.png", "ogmo.png"],
             },
             {
@@ -77,12 +82,16 @@ export default {
               `This was my first project at Hyper Island. As such I wanted to explore as many features, in HTML, CSS & Javascript, as I could and figured the best way was to
               create a whole bunch of different websites, then stringing them together in a sort of "game". The websites are loaded dynamically on the page using Javascript 
               objects and most of the textures are hand-drawn by me using photoshop.`],
-              logos: ["javascript.svg", "html.png", "css.png", "jquery.png", "photoshop.svg"]
+              logos: ["jquery.png", "photoshop.svg"]
             },
             {
               name: 'marketplace',
               isActive: false,
-              description: [`This was my first introduction to the MERN stack. It's a marketplace demo that features:`,
+              description: [`This was a project for our module Data interaction, where our task was to work with backend, using some type of server and requesting
+              information from said server. While most people in class wanted to make E-commerce websites, I wanted to make something similar to "Ebay", where users
+              could also interact with the backend, by creating their own accounts, posting their own items to the marketplace and being able to trade said items with
+              other users.`,
+              `So what I ended up with is a marketplace demo that features:`,
               `- User registration & login saved to Mongodb with bcrypted passwords`,
               `- User authentication using JSON-webtokens`,
               `- Posting items with images that are saved to the local server using Multer.`,
@@ -95,47 +104,57 @@ export default {
             {
               name: 'blackjack',
               isActive: false,
-              description: [`My first react project and it's Blackjack based on a deck of cards API https://deckofcardsapi.com/!!`,
-              `It has all the necessary blackjack features
+              description: [`I made this during our module "My first web-app" where we got introduced to component based frameworks and our task was to create an app using
+              said frameworks while working with an API. I decided to work with react and to make a Blackjack game based on a deck of cards API https://deckofcardsapi.com/.`,
+              `It was nice to have a simple goal, make blackjack, while being able to tackle the challanges that arose with creative solutions
               such as: betting, asking for more cards (hitting), losing (busting) with a value over 21, dealer showing only one card until users round is finished, 
-              dealer drawing automatically until a value over 16, Aces automatically going between 11 and 1 and dynamically lining up the cards in a viewable manner.`],
-              logos: ["react.png", "javascript.svg"]
+              dealer drawing automatically until a value over 16, Aces automatically going between 11 and 1, dynamically lining up the cards in a viewable manner, etc.`,
+              `I also found components compelling creating a natural easy-to-understand structure without thinking to much and being able to change a value in a state and it 
+              automatically re-renders the site without having to use .innerHTML also being able to send those values to other components as props to use, WOW!`,
+              ],
+              logos: ["react.png"]
             },
             {
               name: 'thehills',
               isActive: false,
-              description: [`Welcome to the Hills! It's an app where you would be able to buy and own your own viritual apartment. For now it's only a demo,
+              description: [`Welcome to the Hills! This was a group project in where the focus was on collaboration, working together to create a E-commerce site. 
+              As I had deepdived into the MERN-stack in my previous project (Marketplace) I knew what tasks was required to complete in order to get a functioning, 
+              well structured MERN-stack. It was fun and challenging to share knowledge in a way that was easy to understand, gain new knowledge & understanding from
+              my team and having a team to bounce ideas off of.`,
+              `We worked with an agile/scrum setup with weekly sprints, I took the role as scrum-master one week and project-owner another week and took a lot of initiative
+              to create bite-sized tasks for the team to complete.`,
+              `The idea for the app was for users to be able to buy and own their own viritual apartments. We were somewhat short on time so for now it's only a demo,
               in where you can edit one apartment (601) with different posters of your choosing. Other apartments that light up are owned by us, the
-              creators, in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database.`,
-              `This was a group project in where the focus was on collaboration. We worked with an agile/scrum setup with weekly sprints, in where my focus was mainly backend
-              and functionality`],
+              creators, in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database.
+              We talked a lot about working with a focus of value to the customer so due to our short timeline we wanted to make sure the "customer" would be able to understand
+              and interact with the base concept of the product to see if it was something they found valuable.`
+              ],
               logos: ["mongodb.png", "react.png", "nodejs.png"]
-            },
-            {
-              name: 'quiz',
-              isActive: false,
-              description: [`A fun quiz made in javascript! It features 6 different types of quizzes, a ghibli-sound quiz, a silhouette quiz, a quiz with dragging/dropping
-              pictures, a flashlight quiz, a "dressing room" quiz and a more typical question with X options quiz.`,
-              `This was my second group project at Hyper-Island, where our group chose to focus on learning. As such we divided the quizzes for each individual to work on,
-              while being available for the group for questions/help throwing ideas around. I worked mainly on the dragging/dropping quiz, flashlight quiz and the visual effects
-              inbetween the quizzes.`],
-              logos: ["javascript.svg", "html.png", "css.png", "jquery.png"]
             },
             {
               name: 'homepage',
               isActive: false,
               description: [`This was my first group project at Hyper-Island and our goal was to work with local/session-storage. We decided to make a more fun "new-tab" like website
-              where you can add your own favourite websites as links to the page, while having a background that changes depending on the time of day (daytime = sun, nighttime = moon & stars)`],
-              logos: ["javascript.svg", "html.png", "css.png"]
+              where you can add your own favourite websites as links to the page, while having a background that changes depending on the time of day (daytime = sun, nighttime = moon & stars)`,
+              `As I had prior experience with coding, I took on the role of project-lead, structuring tasks, helping out to solve problems when they arose, and keeping a good working relationship
+              in the team and with team-members. It was a fun and challenging experience and having great reception on my skills as a leader motivated me to keep leading the team in our
+              next project we worked together.`,
+              `In terms of coding I had a lot of fun to working with the math of creating positioning for the sun/moon based on time of day and implementing it with code, aswell as
+              dynamically adding new website boxes based on the items saved to local-storage.`],
+              logos: []
             },
             {
               name: 'tombraiders',
               isActive: false,
-              description: [`The game is called Tomb-Raiders! It's a 2d platformer made in phaser and a tilemap editor called "tiled", it has features such as double-jumping,
-              attacking, enemies following you on sight, keys to unlock doors and 4 different levels. All of the sprites and textures are free assets we found online, while the
-              spritesheets themselves are handmade by us.`,
-              `This was my third group project at Hyper-Island where the focus was making games inside phaser.`],
-              logos: ["javascript.svg", "phaser.png"]
+              description: [`This was my third group project at Hyper-Island where the focus was making games inside phaser. As my new team had heard from my old team about their
+              experience with me as team leader and with my prior experience with game-programming I was voted to be team leader. It was fun to work together with my team to find
+              a way to create a game we all had fun working with, aswell as creating an structuring tasks in forms of weekly sprints.`,
+              `What we came up with is a 2d platformer called "Tomb Raiders", it's made in a javascript framework called phaser that revolves around using classes and states and a 
+              tilemap editor called "tiled", where we could easily edit our game-maps.`,
+              `The game includes features such as double-jumping, attacking, enemies following you on sight, keys to unlock doors and 4 different levels. Since our focus was on 
+              coding and learning we found using free assets found online in form of sprites and textures the way to go.`,
+              ],
+              logos: ["phaser.png"]
             },
           ]
 

@@ -100,7 +100,7 @@ export default {
     }
 
     .close-x {
-        position: absolute;
+        position: sticky;
         top:40px;
         left:calc(100% - 50px);
         transform: translate(0,-50%);

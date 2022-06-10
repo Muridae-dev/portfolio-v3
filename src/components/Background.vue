@@ -1,47 +1,46 @@
 <template>
-    <div class="background-container">
-        <div class="background-darkener">
+    <div class="background-sticky">
+        
 
-        </div>
+        
         <img src="../assets/background/static3.gif" class="gif-image" style="opacity:0.1;"/>
     
         <img src="../assets/background/static16.gif" class="gif-image" />
+        
+    </div>
+    <div class="background-container">
+        <div class="background-darkener"></div>
+        <img src="../assets/background/background-images/pic8.png" class="background-image" />
     </div>
 </template>
 
 <script>
 export default {
     name: "Background",
-    async created() {
-        // PUTTING ALL IMPORTED IMAGES INTO "IMAGES" ARRAY
-        this.images = await this.importAll(require.context('../assets/background', false, /\.(png|jpe?g|svg)$/))
-        await this.images.forEach(image => {
-            image.zIndex = this.currentZIndex;
-            //console.log(image.zIndex);
-        })
-    },
-    methods: {
-        testing(data) {
-            //console.log(data)
-        },
-        // IMPORTING ALL IMAGES FROM MASCOTS FOLDER
-        importAll(r) {
-            let imagesTemp = {}
-            r.keys().forEach((item, index) => {
-                imagesTemp[item.replace('./', '')] = r(item);
-            });
-            let imagesArray = Object.keys(imagesTemp).map(image => {let img = new Image(); img.src = require('../assets/mascots/' + image); return img;})
-
-            return imagesArray
-        },
+    data() {
+        return {
+            images: [{url: "pic1.jpg", top: '70'},{url: "pic2.jpg", top: '70'}]
+        }
     }
 }
 </script>
 
 <style scoped>
+    .background-sticky {
+        height:100vh;
+        width:100vw;
+        
+        position:fixed;
+        top:0;
+        left:0;
+        z-index: -9;
+
+        overflow-y:hidden;
+    }
+
     .background-container {
-        height:100%;
-        width:100%;
+        height:100vh;
+        width:100vw;
         
         position:absolute;
         top:0;
@@ -73,9 +72,9 @@ export default {
         opacity:0.8;
 
         position:absolute;
-        top:0%;
+        top:60%;
         left:50%;
-        transform:translate(-50%,0);
+        transform:translate(-50%,-50%);
     }
 
     .gif-image {

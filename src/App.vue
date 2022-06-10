@@ -21,7 +21,8 @@
       </NewWindow>
     </div>
   </div>
-
+  
+  <Background />
   
     <Mascots v-if="mascotsActive" :mascotsActive="closeMascots"/>
     
@@ -53,6 +54,7 @@ import AboutMeIntro from "./views/AboutMeIntro.vue"
 import AboutMe from "./views/AboutMe.vue"
 import Drawing from "./views/Drawing.vue"
 import Mascots from "./components/Mascots.vue"
+import Background from "./components/Background.vue"
 
 // MOVE X SCROLL TO APPROPRIATE PLACE ON RESIZE
 $(window).resize(function () {
@@ -95,7 +97,8 @@ $(window).scroll(function () {
       AboutMeIntro,
       AboutMe,
       Drawing,
-      Mascots
+      Mascots,
+      Background
 
     },
     data() {

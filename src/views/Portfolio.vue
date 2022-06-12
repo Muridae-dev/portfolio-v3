@@ -186,6 +186,8 @@ export default {
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
+
+
   .corner-border-box {
     z-index:9;
   }
@@ -290,7 +292,6 @@ export default {
     padding-top:100px;
     padding-bottom:100px;
     width:100vw;
-    background:black;
     text-align:center;
     font-family: 'Source Code Pro', monospace;
 
@@ -304,6 +305,8 @@ export default {
 
     
   }
+
+
 
   @media only screen and (max-width: 1000px) { 
   .portfolio-items {
@@ -335,7 +338,6 @@ export default {
     padding-top:100px;
     padding-bottom:100px;
     width:90vw;
-    background:black;
     text-align:center;
     font-family: 'Source Code Pro', monospace;
 

@@ -4,8 +4,7 @@
 
         
         <img src="../assets/background/static3.gif" class="gif-image" style="opacity:0.1;"/>
-    
-        <img src="../assets/background/static16.gif" class="gif-image" />
+
         
     </div>
     <div class="background-container">
@@ -56,7 +55,7 @@ export default {
 
         z-index:2;
         background: rgb(0,0,0);
-        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 70%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,1) 100%);
 
 
         position:absolute;

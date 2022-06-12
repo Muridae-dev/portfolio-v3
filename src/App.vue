@@ -22,15 +22,13 @@
     </div>
   </div>
   
-  <Background />
+    <Background />
   
     <Mascots v-if="mascotsActive" :mascotsActive="closeMascots"/>
     
     <Intro />
         
-    <div ref="Work" class="container-portfolio">
-      <Portfolio />
-    </div>
+
 
     <div ref="About Me" class="container-about">
       <AboutMeIntro v-if="windowedComponents[3].isActive" :arrowDownFunc="() => goto('About Me 2')"/>
@@ -38,6 +36,10 @@
     </div>
     <div ref="About Me 2" class="container-about-2">
       <AboutMe v-if="windowedComponents[3].isActive"/>
+    </div>
+
+    <div ref="Work" class="container-portfolio">
+      <Portfolio />
     </div>
 
   
@@ -247,7 +249,7 @@ $(window).scroll(function () {
         }
 
         window.addEventListener('scroll', () => 
-        {if(window.innerWidth <= 1350 && window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[3].isActive = true});
+        {if(window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[3].isActive = true});
     },
 
   }
@@ -260,8 +262,8 @@ $(window).scroll(function () {
 /* ------------------- GENERAL ----------------*/
 
 html, body {
-  height:100%;
-  width:100%;
+  height:auto;
+  width:auto;
   padding:0;
   margin:0;
 
@@ -372,17 +374,16 @@ body::-webkit-scrollbar-thumb
 .container-portfolio {
   height:auto;
   width:100vw;
-  position:absolute;
-  top:100vh;
+  position:relative;
+  float:left;
 }
 
 .container-about {
   height:100vh;
   width:100vw;
 
-  position:absolute;
-  top:0;
-  left:100vw;
+  position:relative;
+  float:left;
 
   z-index: -1;
 
@@ -392,45 +393,13 @@ body::-webkit-scrollbar-thumb
   height:100vh;
   width:100vw;
 
-  position:absolute;
-  top:100vh;
-  left:100vw;
+  position:relative;
+  float:left;
 
   
 }
 
-@media only screen and (max-width: 1350px) {
-  .container-portfolio {
-    top:340vh;
-  }
 
-  .container-about {
-    top:100vh;
-    left:0;
-  }
-
-  .container-about-2 {
-    top:200vh;
-    left:0;
-  }
-
-  @media only screen and (max-height: 700px) {
-    .container-portfolio {
-      top:380vh;
-    }
-
-    .container-about {
-      top:120vh;
-      left:0;
-    }
-
-    .container-about-2 {
-      top:220vh;
-      left:0;
-    }
-  }
-
-}
 
 /* ------------------- CONTAINERS END ----------------*/
 
@@ -452,6 +421,8 @@ body::-webkit-scrollbar-thumb
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
+  height:auto;
+  width:auto;
 }
 </style>
 

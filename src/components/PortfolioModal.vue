@@ -118,9 +118,7 @@ export default {
         overflow:hidden;
     
   }
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Signika+Negative:wght@400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Kdam+Thmor+Pro&family=Signika+Negative:wght@300&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
   p {

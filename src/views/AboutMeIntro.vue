@@ -446,6 +446,12 @@ export default {
             font-size:16vw;
         }
 
+        @keyframes travelerHover {
+            0% {transform: translateX(-50%) scaleX(1) }
+            50% {transform:translateX(-50%) scaleX(0.5) }
+            100% {transform:translateX(-50%) scaleX(1) }
+        }
+
         .traveler {
             font-size:14vw;
             left:50%;

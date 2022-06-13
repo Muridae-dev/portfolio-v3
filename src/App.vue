@@ -31,11 +31,11 @@
 
 
     <div ref="About Me" class="container-about">
-      <AboutMeIntro v-if="windowedComponents[3].isActive" :arrowDownFunc="() => goto('About Me 2')"/>
+      <AboutMeIntro v-if="windowedComponents[2].isActive" :arrowDownFunc="() => goto('About Me 2')"/>
       
     </div>
     <div ref="About Me 2" class="container-about-2">
-      <AboutMe v-if="windowedComponents[3].isActive"/>
+      <AboutMe v-if="windowedComponents[2].isActive"/>
     </div>
 
     <div ref="Work" class="container-portfolio">
@@ -115,21 +115,9 @@ $(window).scroll(function () {
             name: "Work",
             thumbnail: "./assets/framework-icons/javascript.svg",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '20%' : '10%',
-            yPos: window.innerWidth > 750 ? '15%' : '5%',
+            xPos: window.innerWidth > 750 ? '15%' : '10%',
+            yPos: window.innerWidth > 750 ? '40%' : '5%',
             useWindow: false,
-          },
-          {
-            component: "HomeView",
-            isActive: false,
-            name: "Home",
-            defaultSizeX: '800px',
-            defaultSizeY: '800px',
-            thumbnail: "./assets/intro/muridae.png",
-            zIndex: 0,
-            xPos: window.innerWidth > 1300 ? '100%' : '0%',
-            yPos: window.innerWidth > 1300 ? '0%' : '-100%',
-            useWindow: false
           },
           {
             component: "Travel",
@@ -140,7 +128,7 @@ $(window).scroll(function () {
             thumbnail: "./assets/mascots/murky.png",
             zIndex: 0,
             xPos: window.innerWidth > 750 ? '20%' : '10%',
-            yPos: window.innerWidth > 750 ? '70%' : '75%',
+            yPos: window.innerWidth > 750 ? '-70%' : '-75%',
             useWindow: true
           },
           {
@@ -151,8 +139,8 @@ $(window).scroll(function () {
             defaultSizeY: '800px',
             thumbnail: "./assets/icons/portfolio.png",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '70%' : '70%',
-            yPos: window.innerWidth > 750 ? '70%' : '75%',
+            xPos: window.innerWidth > 750 ? '75%' : '70%',
+            yPos: window.innerWidth > 750 ? '40%' : '5%',
             useWindow: false
           },
           {
@@ -163,8 +151,8 @@ $(window).scroll(function () {
             defaultSizeY: window.innerWidth > 750 ? '800px' : (window.innerHeight - 20) + 'px',
             thumbnail: "./assets/mascots/hogger.png",
             zIndex: 0,
-            xPos: window.innerWidth > 750 ? '13%' : '70%',
-            yPos: window.innerWidth > 750 ? '40%' : '5%',
+            xPos: window.innerWidth > 750 ? '47%' : '40%',
+            yPos: window.innerWidth > 750 ? '70%' : '70%',
             useWindow: true
           },
           {
@@ -174,7 +162,7 @@ $(window).scroll(function () {
             thumbnail: "./assets/mascots/occult2.png",
             zIndex: 0,
             xPos: window.innerWidth > 750 ? "70%" : "0%",
-            yPos: window.innerWidth > 750 ? "14%" : "-100%",
+            yPos: window.innerWidth > 750 ? "-100%" : "-100%",
             useWindow: false
             
           }
@@ -236,20 +224,8 @@ $(window).scroll(function () {
           });
         }
 
-        // IF PAGE STARTS AT ABOUT ME IT SHOWS
-        if(window.pageXOffset >= window.innerWidth - 100) {
-          this.windowedComponents[3].isActive = true;
-          
-          if(window.pageYOffset > window.innerHeight*2) {
-            window.scrollTo({
-                  top:window.innerHeight,
-                  behavior: 'smooth'
-            })
-          }
-        }
-
         window.addEventListener('scroll', () => 
-        {if(window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[3].isActive = true});
+        {if(window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[2].isActive = true});
     },
 
   }
@@ -390,8 +366,9 @@ body::-webkit-scrollbar-thumb
 }
 
 .container-about-2 {
-  height:100vh;
+  height:auto;
   width:100vw;
+  padding-bottom: 20vh;
 
   position:relative;
   float:left;

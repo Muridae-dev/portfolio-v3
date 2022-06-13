@@ -138,9 +138,9 @@ export default {
 
     /* ------------------- GENERAL ----------------*/
     .container {
-        position:absolute;
+        position:relative;
 
-        height:100vh;
+        height:auto;
         width:100vw;
     }
 

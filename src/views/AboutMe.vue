@@ -7,8 +7,8 @@
 
         <div class="text-1"
         :data-aos="screenWidth > 1300 ? 'fade-down' : 'fade'" data-aos-duration="1000" data-aos-delay="500">
-            <p>I'm a front-end student at Hyper Island in Sweden. </p>
-            <p>I like to solve complex problems with creative solutions using programming. </p>
+            <p>Hey, I'm Noah! I study front-end at Hyper Island in Sweden. </p>
+            <p>I love solving complex problems using creative solutions in coding. </p>
             <p>Languages and frameworks I have worked with include, Javascript, React, Vue, Node.js & Haxe
             and have dipped my toes in Java, C++, C# & Python. </p>
         </div>
@@ -25,7 +25,7 @@
         data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
             <p>
                 When not programming I love to do martial arts, go for adventures on my bike, draw, play videogames, make videogames,
-                play music, be out in nature & explore the world.
+                play music, be out in nature & exploring the world.
             </p>
             <p>
                 

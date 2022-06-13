@@ -3,13 +3,15 @@
         
 
         
-        <img src="../assets/background/static3.gif" class="gif-image" style="opacity:0.1;"/>
+        <img src="../assets/background/static3.gif" class="gif-image" style="opacity:0.05;"/>
+        <img src="../assets/background/static15.gif" class="gif-image" style="opacity:0.02;"/>
 
         
     </div>
     <div class="background-container">
         <div class="background-darkener"></div>
         <div class="background-image" />
+        
     </div>
 </template>
 

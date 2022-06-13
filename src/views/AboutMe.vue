@@ -140,7 +140,7 @@ export default {
     .container {
         position:relative;
 
-        height:auto;
+        height:100vh;
         width:100vw;
     }
 

@@ -355,20 +355,23 @@ body::-webkit-scrollbar-thumb
 }
 
 .container-about {
-  height:100vh;
-  width:100vw;
-
   position:relative;
   float:left;
 
-  z-index: -1;
+  height:100vh;
+  width:100vw;
+
+
+
+  z-index: 1;
 
 }
 
 .container-about-2 {
-  height:auto;
+  height:100vh;
+  min-height:100vh;
   width:100vw;
-  padding-bottom: 20vh;
+
 
   position:relative;
   float:left;
@@ -376,6 +379,15 @@ body::-webkit-scrollbar-thumb
   
 }
 
+@media only screen and (max-width: 650px) {
+  .container-about-2 {
+
+  padding-bottom: 20vh;
+
+
+  
+}
+}
 
 
 /* ------------------- CONTAINERS END ----------------*/

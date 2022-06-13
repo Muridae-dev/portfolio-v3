@@ -379,9 +379,9 @@ body::-webkit-scrollbar-thumb
   
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
   .container-about-2 {
-
+  height:auto;
   padding-bottom: 20vh;
 
 

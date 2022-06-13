@@ -160,6 +160,7 @@ export default {
     }
 
     @media only screen and (max-width: 750px) { 
+
         .img-container {
             position:relative;
             top:unset;

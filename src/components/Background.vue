@@ -65,7 +65,7 @@ export default {
 
     .background-image {
         height:100%;
-        background-image: url("../assets/background/background-images/pic8.png");
+        background-image: url("../../public/pic8.png");
         background-position: center;
         background-size: cover;
         width:100%;

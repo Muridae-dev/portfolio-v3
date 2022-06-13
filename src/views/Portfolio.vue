@@ -58,19 +58,19 @@ export default {
             {
               name: 'savemissx',
               isActive: false,
-              description: [`I've been fascinated by video-games since I was 5 years old and got Pokemon Silver on GameBoy-Color and have ever since wanted
-              to make my own games. Back in 2019 I was between two jobs and decided to put the time I had into making my own game "SavemissX".
-              I was looking around at many different frameworks but many of them had a lot of graphical interfaces and I was more interested in raw coding
-              and found Haxe/Haxeflixel. It's a "High-level strictly-typed programming language", and in my experience somewhat similar to Java,
-              it is built using classes, states and functions/variables work very much in the same way as they do in Java.`,
+              description: [`I've loved video-games since I was 5 years old and got my first GameBoy-Color and since then I've always thought about
+              making my own games. Back in 2019 I was between two jobs and decided to put the time I had into making my own game "SavemissX".
+              I was looking around at many different frameworks, but many of them had a lot of graphical interfaces and I was more interested in raw coding
+              so I found Haxe/Haxeflixel. It's a "High-level strictly-typed programming language", and in my experience somewhat similar to Java,
+              games are built using classes, states that work very much in the same way as they do in Java.`,
               `I began by following a tutorial on Haxeflixels website on how to create a simple overhead 2d-dungeon-runner. After I got the basics down I
-              started working on my own, changing large parts of code to fit a 2d-platformer rather than dungeon-runner, finding help and inspiration from their API-docs. 
-              I also found a tool called Aseprite that is an easy to use pixel-art editor to make my own sprites and backgrounds.`,
-              `In about two months of work I ended up with what you see now, "SavemissX" a 2d-platformer with many different features such as: double jumping, 
+              started improvising, changing large parts of code, changing gravity, etc. to fit a 2d-platformer rather than dungeon-runner. I got a lot of inspiration 
+              from their API-docs and I also found a tool called Aseprite that is an easy to use pixel-art editor to make my own sprites and backgrounds.`,
+              `In about two months of work I ended up with, "SavemissX" a 2d-platformer with many different features such as: double jumping, 
               climbing, running, 5 unique attacks & animations and a power up feature called "RAGE". It also features 2 kinds of enemies, one flying, one grounded, 
               7 different stages with 3 different backgrounds.`,
-              `It was so much fun to create my own game and I learned a lot about coding that I had only vaguely understood in the past and it was
-              great to be able to use that new knowledge in order to explore and try out different solutions for problems that arised.`,
+              `Working with the game I learned a lot about coding that I had only vaguely understood in the past. Using that new experience allowed me to keep finding new
+              solutions to problems, which sort of "unlocked" new things I could add into my game, like powerups and new attacks, which was like a game in it of itself.`,
               ],
               logos: ["haxe.png", "haxeflixel.png", "aseprite.png", "ogmo.png"],
             },
@@ -78,24 +78,26 @@ export default {
               name: 'dodgethevirus',
               isActive: false,
               description: [`This is DODGE THE VIRUS! It's a game where you travel between different funky websites in order to reach the final boss, THE DRAGON.
-              The journey is full of dangerous VIRUSES that you need to avoid. Being a victim of a virus breaks the game and a restart is needed to continue.`,
-              `This was my first project at Hyper Island. As such I wanted to explore as many features, in HTML, CSS & Javascript, as I could and figured the best way was to
-              create a whole bunch of different websites, then stringing them together in a sort of "game". The websites are loaded dynamically on the page using Javascript 
-              objects and most of the textures are hand-drawn by me using photoshop.`],
+              The game is full of dangerous VIRUSES that you need to avoid. Being a victim of a virus breaks the game you need to restart to continue.`,
+              `This was my first project at Hyper Island, where we got introduced to HTML, CSS & Javascript and our task was just to use those languages in the project. 
+              I really wanted to try out as many features within vanilla CSS/JS as possible and figured the best way was to create a whole bunch of different websites, 
+              with different features and functions then bring it all together in a sort of "game", where you navigate those websites.`, `All the pages including their CSS & JS 
+              are loaded dynamically through objects and most of the textures are hand drawn by me.`],
               logos: ["jquery.png", "photoshop.svg"]
             },
             {
               name: 'marketplace',
               isActive: false,
-              description: [`This was a project for our module Data interaction, where our task was to work with backend, using some type of server and requesting
-              information from said server. While most people in class wanted to make E-commerce websites, I wanted to make something similar to "Ebay", where users
-              could also interact with the backend, by creating their own accounts, posting their own items to the marketplace and being able to trade said items with
-              other users.`,
+              description: [`This was a project at Hyper Island during our module Data interaction, where our task was to host and use some type of server and requesting
+              information from said server. A recommendation was to make E-commerce websites and I wanted to take that to the next level and got the idea to make something 
+              similar to "Ebay", where users could also interact with the backend, by creating their own accounts, posting their own items to the marketplace and being able 
+              to trade said items with other users.`,
               `So what I ended up with is a marketplace demo that features:`,
+              `- A fully built MERN-Stack`,
               `- User registration & login saved to Mongodb with bcrypted passwords`,
               `- User authentication using JSON-webtokens`,
               `- Posting items with images that are saved to the local server using Multer.`,
-              `Item creation also features a short description, choosing tags and choosing the color of the description text.`,
+              `- Item creation also features a short description, choosing tags and choosing the color of the description text.`,
               `In the marketplace you can view other users items, filter items using tags and REQUEST TRADEs. When a trade request 
               is made the owner of the item will be notified in the "Inventory" route and can then choose to ACCEPT TRADE, where the requesting user will then aquire said item in 
               their inventory.`],
@@ -104,55 +106,59 @@ export default {
             {
               name: 'blackjack',
               isActive: false,
-              description: [`I made this during our module "My first web-app" where we got introduced to component based frameworks and our task was to create an app using
-              said frameworks while working with an API. I decided to work with react and to make a Blackjack game based on a deck of cards API https://deckofcardsapi.com/.`,
-              `It was nice to have a simple goal, make blackjack, while being able to tackle the challanges that arose with creative solutions
+              description: [`This was my first introduction to component based frameworks where my task was to create an app using
+              a component based framework, working with an API. I decided to work with react and to make a Blackjack game based on a deck of cards API https://deckofcardsapi.com/.`,
+              `I had a nice, simple goal, make blackjack and while the idea was simple it was harder than I anticipated. Figuring out features 
               such as: betting, asking for more cards (hitting), losing (busting) with a value over 21, dealer showing only one card until users round is finished, 
               dealer drawing automatically until a value over 16, Aces automatically going between 11 and 1, dynamically lining up the cards in a viewable manner, etc.`,
-              `I also found components compelling creating a natural easy-to-understand structure without thinking to much and being able to change a value in a state and it 
-              automatically re-renders the site without having to use .innerHTML also being able to send those values to other components as props to use, WOW!`,
+              `It was a lot of fun and taught me a lot about React and using API:s/JSON-files. I thought it was really cool to use states that 
+              automatically re-renders the site without having to use .innerHTML also being able to send those values to other components as props to use, WOW!
+              The structure for the code was really nice aswell, using components kind of solves that problem on its own. All that code in one JS document,
+              that would suck.`,
               ],
               logos: ["react.png"]
             },
             {
               name: 'thehills',
               isActive: false,
-              description: [`Welcome to the Hills! This was a group project in where the focus was on collaboration, working together to create a E-commerce site. 
-              As I had deepdived into the MERN-stack in my previous project (Marketplace) I knew what tasks was required to complete in order to get a functioning, 
-              well structured MERN-stack. It was fun and challenging to share knowledge in a way that was easy to understand, gain new knowledge & understanding from
-              my team and having a team to bounce ideas off of.`,
-              `We worked with an agile/scrum setup with weekly sprints, I took the role as scrum-master one week and project-owner another week and took a lot of initiative
-              to create bite-sized tasks for the team to complete.`,
-              `The idea for the app was for users to be able to buy and own their own viritual apartments. We were somewhat short on time so for now it's only a demo,
-              in where you can edit one apartment (601) with different posters of your choosing. Other apartments that light up are owned by us, the
-              creators, in which we have our own posters. It is setup using the MERN-stack, where the apartments are loaded dynamically using a Mongodb database.
-              We talked a lot about working with a focus of value to the customer so due to our short timeline we wanted to make sure the "customer" would be able to understand
-              and interact with the base concept of the product to see if it was something they found valuable.`
+              description: [`Welcome to the Hills! This was a group project with a focus on collaboration, working in an Agile-manner and coding together to create an E-commerce site. 
+              We decided to build our project using the MERN-stack and since I had made a MERN-stack in my previous project (Marketplace), I was able to lead the team through 
+              how to create and setup a simple stack with an easy-to-understand structure. It was fun and challenging to share knowledge with the team, explaning in different ways 
+              for it to make sense to the team, while also gaining new knowledge and understanding through pair- and mob-programming.`,
+              `We worked with an agile/scrum setup with weekly sprints, reviews, daily standups and switched around the roles of scrum master and project owner weekly during the
+              project, to let everyone in the team try their hand.`,
+              `The idea for the app was for users to be able to buy and own their own viritual apartments. In the app you can edit one apartment (601) with different posters 
+              of your choosing. Other apartments that light up are owned by us, the creators, in where we have our own posters setup. Apartments are loaded dynamically using a 
+              Mongodb database, fetching JSON data, using it as objects and looping through them to load the apartments.`,
+              `During the project we talked a lot about working with a focus of value to the customer, due to our short timeline our focus was to make sure the "customer" would be
+              able to understand and interact with the base concept of the product to see if it was something they found valuable, in which I think we succeeded.`
               ],
               logos: ["mongodb.png", "react.png", "nodejs.png"]
             },
             {
               name: 'homepage',
               isActive: false,
-              description: [`This was my first group project at Hyper-Island and our goal was to work with local/session-storage. We decided to make a more fun "new-tab" like website
-              where you can add your own favourite websites as links to the page, while having a background that changes depending on the time of day (daytime = sun, nighttime = moon & stars)`,
-              `As I had prior experience with coding, I took on the role of project-lead, structuring tasks, helping out to solve problems when they arose, and keeping a good working relationship
-              in the team and with team-members. It was a fun and challenging experience and having great reception on my skills as a leader motivated me to keep leading the team in our
-              next project we worked together.`,
-              `In terms of coding I had a lot of fun to working with the math of creating positioning for the sun/moon based on time of day and implementing it with code, aswell as
-              dynamically adding new website boxes based on the items saved to local-storage.`],
+              description: [`This was my first group project at Hyper-Island and our goal was to work with local- and session-storage. We decided to make a more fun "new-tab" like website
+              where you can add your own favourite websites as links on the page. We wanted to spice it up with a background that changes depending on the time of day (daytime = sun, 
+              nighttime = moon & stars)`,
+              `As I had some prior experience with coding, I was given the role of project-lead, structuring tasks, helping out to solve coding problems and keeping a good 
+              working environment. It was a fun and challenging experience and having great reception on my skills as a leader motivated me to keep leading the team in our
+              next project and in many projects since.`,
+              `I had a lot of fun helping my teammates, finding ways to explain solutions in ways that made sense to them and in terms of coding to work with the math of creating 
+              positioning for the sun/moon based on time of day and implementing it with code, aswell as dynamically adding new website boxes based on the items saved to local-storage.`],
               logos: []
             },
             {
               name: 'tombraiders',
               isActive: false,
-              description: [`This was my third group project at Hyper-Island where the focus was making games inside phaser. As my new team had heard from my old team about their
-              experience with me as team leader and with my prior experience with game-programming I was voted to be team leader. It was fun to work together with my team to find
-              a way to create a game we all had fun working with, aswell as creating an structuring tasks in forms of weekly sprints.`,
-              `What we came up with is a 2d platformer called "Tomb Raiders", it's made in a javascript framework called phaser that revolves around using classes and states and a 
-              tilemap editor called "tiled", where we could easily edit our game-maps.`,
-              `The game includes features such as double-jumping, attacking, enemies following you on sight, keys to unlock doors and 4 different levels. Since our focus was on 
-              coding and learning we found using free assets found online in form of sprites and textures the way to go.`,
+              description: [`This was my third group project at Hyper-Island where we were to make games inside "Phaser", a framework to make games in Javascript. Because of my 
+              prior experience with game-programming and my team had heard from my old team about their experience with me as team leader I was voted to be team leader. 
+              I was structuring weekly sprints for the team to cover, helped them with coding problems and basics of game-design. We worked mostly on our own, working on features
+              seperately, since we figured it would be easier for us to learn and more efficient in terms of progress.`,
+              `What we came up with is a 2d platformer called "Tomb Raiders"! It's build using phaser and tilemap editor called "tiled", where you can easily create and edit your
+              own game-maps.`,
+              `The game includes features such as double-jumping, attacking, enemies following you on sight, keys to unlock doors and 4 different levels. We used free assets for
+              sprites and textures found online since we wanted to focus more on coding and learning.`,
               ],
               logos: ["phaser.png"]
             },

@@ -15,7 +15,7 @@
             </div>
             <div class="description-container">
                 <p v-for="description in portfolioItem.description" :key="description">
-                    {{description}}
+                    {{description.toString()}}
                 </p>
 
                 <div class="logo-container">
@@ -117,6 +117,15 @@ export default {
         height:540px;
         overflow:hidden;
     
+  }
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Signika+Negative:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Kdam+Thmor+Pro&family=Signika+Negative:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+  p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size:1em;
   }
 
   @media only screen and (min-width: 1800px) {

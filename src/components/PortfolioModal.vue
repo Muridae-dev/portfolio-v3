@@ -17,7 +17,7 @@
                 <p v-for="description in portfolioItem.description" :key="description">
                     {{description.toString()}}
                 </p>
-                <a :href="portfolioItem.githubLink" target="_blank" rel="noopener noreferrer">Link to Github repo</a>
+                <a v-if="portfolioItem.githubLink" :href="portfolioItem.githubLink" target="_blank" rel="noopener noreferrer">Link to Github repo</a>
                 <div class="logo-container">
                     <div v-for="logo in portfolioItem.logos" :key="logo" style="padding:5px;">
                         <img :src="require(`../assets/framework-icons/${logo}`)"/>

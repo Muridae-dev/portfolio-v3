@@ -73,6 +73,7 @@ export default {
               solutions to problems, which sort of "unlocked" new things I could add into my game, like powerups and new attacks, which was like a game in it of itself.`,
               ],
               logos: ["haxe.png", "haxeflixel.png", "aseprite.png", "ogmo.png"],
+              githubLink: "https://github.com/Muridae-dev/Savemissx"
             },
             {
               name: 'dodgethevirus',
@@ -83,7 +84,8 @@ export default {
               I really wanted to try out as many features within vanilla CSS/JS as possible and figured the best way was to create a whole bunch of different websites, 
               with different features and functions then bring it all together in a sort of "game", where you navigate those websites.`, `All the pages including their CSS & JS 
               are loaded dynamically through objects and most of the textures are hand drawn by me.`],
-              logos: ["jquery.png", "photoshop.svg"]
+              logos: ["jquery.png", "photoshop.svg"],
+              githubLink: "https://github.com/Muridae-dev/dodgethevirus"
             },
             {
               name: 'marketplace',
@@ -101,7 +103,8 @@ export default {
               `In the marketplace you can view other users items, filter items using tags and REQUEST TRADEs. When a trade request 
               is made the owner of the item will be notified in the "Inventory" route and can then choose to ACCEPT TRADE, where the requesting user will then aquire said item in 
               their inventory.`],
-              logos: ["mongodb.png", "react.png", "nodejs.png"]
+              logos: ["mongodb.png", "react.png", "nodejs.png"],
+              githubLink: "https://github.com/Muridae-dev/di_brief"
             },
             {
               name: 'blackjack',
@@ -116,7 +119,8 @@ export default {
               The structure for the code was really nice aswell, using components kind of solves that problem on its own. All that code in one JS document,
               that would suck.`,
               ],
-              logos: ["react.png"]
+              logos: ["react.png"],
+              githubLink: "https://github.com/Muridae-dev/blackjack"
             },
             {
               name: 'thehills',
@@ -133,7 +137,8 @@ export default {
               `During the project we talked a lot about working with a focus of value to the customer, due to our short timeline our focus was to make sure the "customer" would be
               able to understand and interact with the base concept of the product to see if it was something they found valuable, in which I think we succeeded.`
               ],
-              logos: ["mongodb.png", "react.png", "nodejs.png"]
+              logos: ["mongodb.png", "react.png", "nodejs.png"],
+              githubLink: "https://github.com/iseneld/m8__e-commerce"
             },
             {
               name: 'homepage',
@@ -146,7 +151,7 @@ export default {
               next project and in many projects since.`,
               `I had a lot of fun helping my teammates, finding ways to explain solutions in ways that made sense to them and in terms of coding to work with the math of creating 
               positioning for the sun/moon based on time of day and implementing it with code, aswell as dynamically adding new website boxes based on the items saved to local-storage.`],
-              logos: []
+              logos: [],
             },
             {
               name: 'tombraiders',
@@ -160,7 +165,8 @@ export default {
               `The game includes features such as double-jumping, attacking, enemies following you on sight, keys to unlock doors and 4 different levels. We used free assets for
               sprites and textures found online since we wanted to focus more on coding and learning.`,
               ],
-              logos: ["phaser.png"]
+              logos: ["phaser.png"],
+              githubLink: "https://github.com/Muridae-dev/TombRaider"
             },
           ]
 

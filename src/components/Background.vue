@@ -3,8 +3,8 @@
         
 
         
-        <img src="../assets/background/static3.gif" class="gif-image" style="opacity:0.05;"/>
-        <img src="../assets/background/static15.gif" class="gif-image" style="opacity:0.02;"/>
+        <img src="../assets/background/static3.gif" class="gif-image op1"/>
+        <img src="../assets/background/static15.gif" class="gif-image op2"/>
 
         
     </div>
@@ -85,11 +85,28 @@ export default {
         height:100%;
         width:100%;
 
-        opacity:0.1;
         z-index:1;
 
         position:absolute;
         top:0;
         left:0;
+    }
+
+    .op1 {
+        opacity:0.05;
+    }
+
+    .op2 {
+        opacity:0.02;
+    }
+
+    @media only screen and (max-width: 750px) {
+    .op1 {
+        opacity:0.1;
+    }
+
+    .op2 {
+        opacity:0.04;
+    }
     }
 </style>

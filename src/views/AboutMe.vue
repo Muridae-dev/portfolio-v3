@@ -5,8 +5,8 @@
             <img :src="imgSwitch == 1 ? require('../assets/about/noah.jpg') : imgSwitch == 2 ? require('../assets/about/angel.png') : 
             imgSwitch == 3 ? require('../assets/about/demon.png') : imgSwitch == 4 ? require('../assets/about/clown.png') : imgSwitch == 5 ? require('../assets/about/lizard.png')
             : require('../assets/about/noah.jpg')"
-
-            data-aos="zoom-in" data-aos-duration="1000"/>   
+            data-aos="zoom-in" data-aos-duration="1000" rel="preload"/> 
+              
             <img v-if="enableStatic" :src="require('../assets/background/vue.config.gif')" class="static-gif"/>
         </div>
 

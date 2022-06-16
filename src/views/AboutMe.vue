@@ -187,6 +187,7 @@ export default {
         position:relative;
         width:20vw;
         height:auto;
+        z-index:0;
     }
 
     .static-gif {
@@ -198,6 +199,7 @@ export default {
         height:90%;
         opacity:0.9;
         filter:brightness(70%);
+        z-index:1;
     }
 
     .hide-image {

@@ -1,8 +1,13 @@
 <template>
     <div class="container" ref="About Me 2">
-        <div class="img-container">
+        <div class="img-container" >
             <span data-aos="fade" data-aos-duration="1000">NOAH LUNDBERG</span><br/>
-            <img :src="require('../assets/about/noah.jpg')" data-aos="zoom-in" data-aos-duration="1000"/>   
+            <img :src="imgSwitch == 1 ? require('../assets/about/noah.jpg') : imgSwitch == 2 ? require('../assets/about/angel.png') : 
+            imgSwitch == 3 ? require('../assets/about/demon.png') : imgSwitch == 4 ? require('../assets/about/clown.png') : imgSwitch == 5 ? require('../assets/about/lizard.png')
+            : require('../assets/about/noah.jpg')"
+
+            data-aos="zoom-in" data-aos-duration="1000"/>   
+            <img v-if="enableStatic" :src="require('../assets/background/vue.config.gif')" class="static-gif"/>
         </div>
 
         <div class="text-1"
@@ -43,10 +48,22 @@ export default {
     mounted() {
         AOS.init();
 
+        
+        
+        setInterval(() => {
+            this.enableStatic = true;
+            setTimeout(() => {this.enableStatic = false}, 500);
+            this.imgSwitch++;
+            if(this.imgSwitch > 5) this.imgSwitch = 1;
+            
+        }, 5000)
+
     },
     data () {
         return {
-            screenWidth: window.innerWidth
+            screenWidth: window.innerWidth,
+            imgSwitch: 1,
+            enableStatic: false
         }
     },
     methods: {
@@ -59,7 +76,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
 
@@ -85,6 +102,7 @@ export default {
         width: 20vw;
 
     }
+    
 
     .text-3 {
         position:absolute;
@@ -152,11 +170,91 @@ export default {
 
         height:auto;
         width:30vw;
+
+        
+    }
+
+    .animate {
+        animation: glitch .4s linear infinite;
     }
 
     img {
+        position:relative;
         width:20vw;
         height:auto;
+    }
+
+    .static-gif {
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+        width:20vw;
+        height:90%;
+        opacity:0.9;
+        filter:brightness(70%);
+    }
+
+    @keyframes glitch{
+        0% {
+            left:50%;
+            top:50%;
+
+        }
+
+        10% {
+            left:calc(50% + 100px);
+        }
+
+        15% {
+            left:50%;
+        }
+
+        30% {
+            top:50%;
+            left:50%;
+        }
+
+        35% {
+            top:calc(50% - 10px);
+            left:calc(50% - 10px);
+        }
+
+        40% {
+            top:50%;
+            left:50%;
+        }
+
+        60% {
+            top:50%;
+            left:50%;
+        }
+
+        65% {
+            top:calc(50% + 10px);
+            left:calc(50% - 10px);
+        }
+
+        70% {
+            top:50%;
+            left:50%;
+        }
+
+        90% {
+            left:50%;
+            top:50%;
+        }
+
+        95% {
+            left:calc(50% + 10px);
+            top:calc(50% + 10px);
+        }
+
+
+        100% {
+            left:50%;
+            top:50%;
+        }
     }
 
     @media only screen and (max-width: 750px) { 
@@ -177,6 +275,11 @@ export default {
 
         img {
             width:90vw;
+        }
+
+        .static-gif {
+            width:90vw;
+            height:91%;
         }
     }
 

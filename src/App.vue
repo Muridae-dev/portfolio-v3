@@ -35,7 +35,7 @@
       
     </div>
     <div ref="About Me 2" class="container-about-2">
-      <AboutMe v-if="windowedComponents[2].isActive"/>
+      <AboutMe v-if="aboutMeLoad"/>
     </div>
 
     <div ref="Work" class="container-portfolio">
@@ -108,6 +108,7 @@ $(window).scroll(function () {
         // COMPONENTS FOR "NewWindow.vue"
         currentZ: 0,
         mascotsActive: false,
+        aboutMeLoad: false,
         windowedComponents : [
           {
             component: "Portfolio",
@@ -225,7 +226,10 @@ $(window).scroll(function () {
         }
 
         window.addEventListener('scroll', () => 
-        {if(window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[2].isActive = true});
+        {
+          if(window.pageYOffset >= window.innerHeight*0.6) this.windowedComponents[2].isActive = true;
+          if(window.pageYOffset >= window.innerHeight + window.innerHeight*0.3) this.aboutMeLoad = true;
+        });
     },
 
   }

@@ -12,7 +12,7 @@
             <img :src="require('../assets/about/clown.png')" rel="preload" class="hide-image"/>
             <img :src="require('../assets/about/noah.jpg')" rel="preload" class="hide-image"/>
               
-            <img v-if="enableStatic" :src="require('../assets/background/vue.config.gif')" class="static-gif" rel="preload"/>
+            <img :src="require('../assets/background/vue.config.gif')" class="static-gif" rel="preload" :style="enableStatic ? null : {opacity: 0}"/>
         </div>
 
         <div class="text-1"

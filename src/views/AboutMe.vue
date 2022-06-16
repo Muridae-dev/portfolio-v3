@@ -50,13 +50,13 @@ export default {
 
         
         
-        setInterval(() => {
+        /*setInterval(() => {
             this.enableStatic = true;
             setTimeout(() => {this.enableStatic = false}, 500);
             this.imgSwitch++;
             if(this.imgSwitch > 5) this.imgSwitch = 1;
             
-        }, 5000)
+        }, 5000)*/
 
     },
     data () {

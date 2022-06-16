@@ -5,7 +5,12 @@
             <img :src="imgSwitch == 1 ? require('../assets/about/noah.jpg') : imgSwitch == 2 ? require('../assets/about/angel.png') : 
             imgSwitch == 3 ? require('../assets/about/demon.png') : imgSwitch == 4 ? require('../assets/about/clown.png') : imgSwitch == 5 ? require('../assets/about/lizard.png')
             : require('../assets/about/noah.jpg')"
-            data-aos="zoom-in" data-aos-duration="1000" rel="preload"/> 
+            data-aos="zoom-in" data-aos-duration="1000"/>
+            <img :src="require('../assets/about/demon.png')" rel="preload" class="hide-image"/>
+            <img :src="require('../assets/about/angel.png')" rel="preload" class="hide-image"/>
+            <img :src="require('../assets/about/lizard.png')" rel="preload" class="hide-image"/>
+            <img :src="require('../assets/about/clown.png')" rel="preload" class="hide-image"/>
+            <img :src="require('../assets/about/noah.jpg')" rel="preload" class="hide-image"/>
               
             <img v-if="enableStatic" :src="require('../assets/background/vue.config.gif')" class="static-gif"/>
         </div>
@@ -50,13 +55,13 @@ export default {
 
         
         
-        /*setInterval(() => {
+        setInterval(() => {
             this.enableStatic = true;
             setTimeout(() => {this.enableStatic = false}, 500);
             this.imgSwitch++;
             if(this.imgSwitch > 5) this.imgSwitch = 1;
             
-        }, 5000)*/
+        }, 5000)
 
     },
     data () {
@@ -193,6 +198,10 @@ export default {
         height:90%;
         opacity:0.9;
         filter:brightness(70%);
+    }
+
+    .hide-image {
+        display:none;
     }
 
     @keyframes glitch{

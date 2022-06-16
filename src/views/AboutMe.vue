@@ -34,8 +34,8 @@
         <div class="text-2" v-if="screenWidth > 750"
         data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
             <p>
-                When not programming I love to do martial arts, go for adventures on my bike, draw, play videogames, make videogames,
-                play music, be out in nature & exploring the world.
+                When not programming I'm either doing martial arts, going on bike adventures, drawing, play videogames, making videogames,
+                playing music, out in nature, hanging with friends or exploring the world.
             </p>
             <p>
                 

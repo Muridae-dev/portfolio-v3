@@ -1,6 +1,6 @@
 <template>
   <div class="container-main" ref="Home">
-
+    <img :src="require('./assets/background/background-images/pic8.png')" rel="preload" style="display:none"/>
     <div v-for="thumbnail in windowedComponents"
       :key="thumbnail.name" class="thumbnail" 
       @click="thumbnail.useWindow ? (thumbnail.isActive = !thumbnail.isActive, currentZ++, thumbnail.zIndex = currentZ) : noNewWindow(thumbnail)"

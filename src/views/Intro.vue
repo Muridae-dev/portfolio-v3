@@ -1,4 +1,8 @@
 <template>
+  <img :src="require('../assets/intro/welcome.png')" rel="preload" style="display:none"/>
+  <img :src="require('../assets/intro/to.png')" rel="preload" style="display:none"/>
+  <img :src="require('../assets/intro/muridae.png')" rel="preload" style="display:none"/>
+
     <div className="logo-background">
     </div>
     

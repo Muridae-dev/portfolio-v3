@@ -17,10 +17,9 @@
 
         <div class="text-1"
         :data-aos="screenWidth > 1300 ? 'fade-down' : 'fade'" data-aos-duration="1000" data-aos-delay="500">
-            <p>Hey, I'm Noah! I study front-end at Hyper Island in Sweden. </p>
+            <p>Hey, I'm Noah and I'm a front-end developer! </p>
             <p>I love solving complex problems using creative solutions in coding. </p>
-            <p>Languages and frameworks I have worked with include, Javascript, React, Vue, Node.js & Haxe
-            and have dipped my toes in Java, C++, C# & Python. </p>
+            <p>I work mostly in Vue, React & NativeJS, check out my projects below!</p>
         </div>
 
         <div class="text-3" :data-aos="screenWidth > 1300 ? 'fade-down' : 'fade'" data-aos-duration="1000" :data-aos-delay="screenWidth > 1300 ? 1500 : 0">
@@ -34,8 +33,7 @@
         <div class="text-2" v-if="screenWidth > 750"
         data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
             <p>
-                When not programming I'm either doing martial arts, going on bike adventures, drawing, play videogames, making videogames,
-                playing music, out in nature, hanging with friends or exploring the world.
+                I'm also a marital-artist, bike-rider, adventurer, gamer, creator and musician
             </p>
             <p>
                 

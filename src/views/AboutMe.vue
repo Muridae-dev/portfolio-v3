@@ -33,7 +33,8 @@
         <div class="text-2" v-if="screenWidth > 750"
         data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
             <p>
-                I'm also a marital-artist, bike-rider, adventurer, gamer, creator and musician
+                I have a huge passion for gaming and gamification, as well as UI/UX-design. I also love martial-arts
+                and going for long bike-riding adventures.
             </p>
             <p>
                 
